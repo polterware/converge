@@ -22,7 +22,7 @@ struct pomodoroApp: App {
             PomodoroView()
                 .environmentObject(pomodoroTimer)
         }
-        .defaultSize(width: 200, height: 180)
+        .windowResizability(.contentSize)
 
         MenuBarExtra {
             MenuBarContent()
