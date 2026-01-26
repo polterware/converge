@@ -96,20 +96,20 @@ struct PhaseColors {
                     : Color(red: 0.7, green: 0.45, blue: 0.45)
             )
         case .break:
-            // Break pausado: azul desaturado/escurecido
+            // Break pausado: azul desaturado/escurecido, mas mantendo identidade azul
             return PhaseColors(
                 background: colorScheme == .dark
-                    ? Color(red: 0.08, green: 0.1, blue: 0.15)
+                    ? Color(red: 0.08, green: 0.11, blue: 0.15)
                     : Color(red: 0.92, green: 0.94, blue: 0.97),
                 primary: colorScheme == .dark
-                    ? Color(red: 0.35, green: 0.5, blue: 0.65)
-                    : Color(red: 0.4, green: 0.55, blue: 0.7),
+                    ? Color(red: 0.3, green: 0.5, blue: 0.7)
+                    : Color(red: 0.35, green: 0.55, blue: 0.75),
                 secondary: colorScheme == .dark
-                    ? Color(red: 0.3, green: 0.45, blue: 0.6)
-                    : Color(red: 0.35, green: 0.5, blue: 0.65),
+                    ? Color(red: 0.25, green: 0.45, blue: 0.65)
+                    : Color(red: 0.3, green: 0.5, blue: 0.7),
                 accent: colorScheme == .dark
-                    ? Color(red: 0.4, green: 0.55, blue: 0.7)
-                    : Color(red: 0.45, green: 0.6, blue: 0.75)
+                    ? Color(red: 0.35, green: 0.55, blue: 0.75)
+                    : Color(red: 0.4, green: 0.6, blue: 0.8)
             )
         case .idle:
             // Idle nunca deve chegar aqui, mas retorna cores neutras por segurança
