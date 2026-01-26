@@ -17,7 +17,7 @@ enum CompactWindowService {
         guard let window = NSApp.keyWindow ?? NSApp.mainWindow else { return }
 
         let contentRect = NSRect(x: 0, y: 0, width: compactWidth, height: compactHeight)
-        let newFrameSize = window.frameRect(forContentRect: contentRect, styleMask: window.styleMask).size
+        let newFrameSize = NSWindow.frameRect(forContentRect: contentRect, styleMask: window.styleMask).size
         let frame = window.frame
         let newOrigin = NSPoint(x: frame.minX, y: frame.maxY - newFrameSize.height)
         let newFrame = NSRect(origin: newOrigin, size: newFrameSize)

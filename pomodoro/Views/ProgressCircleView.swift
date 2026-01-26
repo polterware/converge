@@ -41,7 +41,7 @@ struct ProgressCircleView: View {
         .onAppear {
             animatedProgress = progress
         }
-        .onChange(of: progress) { newValue in
+        .onChange(of: progress) { _, newValue in
             withAnimation(.easeInOut(duration: 0.3)) {
                 animatedProgress = newValue
             }
