@@ -12,13 +12,18 @@ struct PhaseColors {
     let accent: Color
     
     static func color(for phase: PomodoroPhase, colorScheme: ColorScheme = .light, isRunning: Bool = true) -> PhaseColors {
-        let baseColors = baseColor(for: phase, colorScheme: colorScheme)
-        
-        if isRunning {
-            return baseColors
-        } else {
-            return pausedColors(from: baseColors, colorScheme: colorScheme)
+        // Se está em idle, sempre retorna cores neutras (não começou)
+        if phase == .idle {
+            return baseColor(for: .idle, colorScheme: colorScheme)
         }
+        
+        // Se está em work ou break e não está rodando, retorna cores pausadas
+        if !isRunning {
+            return pausedColors(for: phase, colorScheme: colorScheme)
+        }
+        
+        // Caso contrário, retorna cores normais da fase (running)
+        return baseColor(for: phase, colorScheme: colorScheme)
     }
     
     private static func baseColor(for phase: PomodoroPhase, colorScheme: ColorScheme) -> PhaseColors {
@@ -71,21 +76,44 @@ struct PhaseColors {
         }
     }
     
-    private static func pausedColors(from base: PhaseColors, colorScheme: ColorScheme) -> PhaseColors {
-        // Cores específicas para o estado pausado - tons de amarelo/laranja para indicar pausa
-        return PhaseColors(
-            background: colorScheme == .dark
-                ? Color(red: 0.15, green: 0.12, blue: 0.08)
-                : Color(red: 0.98, green: 0.96, blue: 0.92),
-            primary: colorScheme == .dark
-                ? Color(red: 0.9, green: 0.7, blue: 0.3)
-                : Color(red: 0.85, green: 0.65, blue: 0.2),
-            secondary: colorScheme == .dark
-                ? Color(red: 0.8, green: 0.6, blue: 0.25)
-                : Color(red: 0.75, green: 0.55, blue: 0.15),
-            accent: colorScheme == .dark
-                ? Color(red: 0.95, green: 0.75, blue: 0.35)
-                : Color(red: 0.9, green: 0.7, blue: 0.25)
-        )
+    private static func pausedColors(for phase: PomodoroPhase, colorScheme: ColorScheme) -> PhaseColors {
+        // Cores pausadas mantêm a identidade da fase mas com desaturação e escurecimento
+        switch phase {
+        case .work:
+            // Work pausado: vermelho desaturado/escurecido
+            return PhaseColors(
+                background: colorScheme == .dark
+                    ? Color(red: 0.15, green: 0.1, blue: 0.1)
+                    : Color(red: 0.95, green: 0.92, blue: 0.92),
+                primary: colorScheme == .dark
+                    ? Color(red: 0.6, green: 0.35, blue: 0.35)
+                    : Color(red: 0.65, green: 0.4, blue: 0.4),
+                secondary: colorScheme == .dark
+                    ? Color(red: 0.5, green: 0.3, blue: 0.3)
+                    : Color(red: 0.55, green: 0.35, blue: 0.35),
+                accent: colorScheme == .dark
+                    ? Color(red: 0.65, green: 0.4, blue: 0.4)
+                    : Color(red: 0.7, green: 0.45, blue: 0.45)
+            )
+        case .break:
+            // Break pausado: azul desaturado/escurecido
+            return PhaseColors(
+                background: colorScheme == .dark
+                    ? Color(red: 0.08, green: 0.1, blue: 0.15)
+                    : Color(red: 0.92, green: 0.94, blue: 0.97),
+                primary: colorScheme == .dark
+                    ? Color(red: 0.35, green: 0.5, blue: 0.65)
+                    : Color(red: 0.4, green: 0.55, blue: 0.7),
+                secondary: colorScheme == .dark
+                    ? Color(red: 0.3, green: 0.45, blue: 0.6)
+                    : Color(red: 0.35, green: 0.5, blue: 0.65),
+                accent: colorScheme == .dark
+                    ? Color(red: 0.4, green: 0.55, blue: 0.7)
+                    : Color(red: 0.45, green: 0.6, blue: 0.75)
+            )
+        case .idle:
+            // Idle nunca deve chegar aqui, mas retorna cores neutras por segurança
+            return baseColor(for: .idle, colorScheme: colorScheme)
+        }
     }
 }

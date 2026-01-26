@@ -28,15 +28,15 @@ enum SoundType: String, CaseIterable, Identifiable {
         case .default:
             return nil
         case .bell:
-            return "Bell"
+            return "Basso"
         case .chime:
-            return "Chime"
+            return "Tink"
         case .glass:
             return "Glass"
         case .hero:
             return "Hero"
         case .note:
-            return "Note"
+            return "Morse"
         case .ping:
             return "Ping"
         case .pop:
@@ -46,7 +46,7 @@ enum SoundType: String, CaseIterable, Identifiable {
         case .sosumi:
             return "Sosumi"
         case .submerge:
-            return "Submerge"
+            return "Submarine"
         case .tink:
             return "Tink"
         }
