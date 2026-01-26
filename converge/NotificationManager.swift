@@ -38,6 +38,7 @@ final class NotificationManager {
         content.title = "Pomodoro Complete!"
         content.body = "The 25 minutes of work are finished. Time for a break!"
         content.sound = getNotificationSound()
+        content.userInfo = ["notificationType": "work"]
         
         sendNotification(content: content)
     }
@@ -47,6 +48,7 @@ final class NotificationManager {
         content.title = "Break Complete!"
         content.body = "The break is over. Time to get back to work!"
         content.sound = getNotificationSound()
+        content.userInfo = ["notificationType": "break"]
         
         sendNotification(content: content)
     }
@@ -57,12 +59,12 @@ final class NotificationManager {
         return nil
     }
     
-    func playSelectedSound() {
+    func playSelectedSound(soundType: SoundType) {
         guard settings.shouldPlaySound else {
             return
         }
         
-        if let soundName = settings.soundType.systemSoundName {
+        if let soundName = soundType.systemSoundName {
             if let sound = NSSound(named: soundName) {
                 sound.play()
             } else {
@@ -73,6 +75,14 @@ final class NotificationManager {
             // Default sound - use beep
             NSSound.beep()
         }
+    }
+    
+    func playWorkSound() {
+        playSelectedSound(soundType: settings.workSoundType)
+    }
+    
+    func playBreakSound() {
+        playSelectedSound(soundType: settings.breakSoundType)
     }
     
     private func sendNotification(content: UNMutableNotificationContent) {
@@ -103,9 +113,15 @@ private class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
         willPresent notification: UNNotification,
         withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
     ) {
-        // Play the selected system sound
+        // Play the appropriate sound based on notification type
         Task { @MainActor in
-            notificationManager?.playSelectedSound()
+            if let notificationType = notification.request.content.userInfo["notificationType"] as? String {
+                if notificationType == "work" {
+                    notificationManager?.playWorkSound()
+                } else if notificationType == "break" {
+                    notificationManager?.playBreakSound()
+                }
+            }
         }
         
         // Always present notification as banner, even when app is in foreground

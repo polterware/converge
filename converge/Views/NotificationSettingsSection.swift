@@ -15,14 +15,24 @@ struct NotificationSettingsSection: View {
             Toggle("Enable Sound", isOn: $settings.soundEnabled)
 
             if settings.soundEnabled {
-                Picker("Sound Type", selection: $settings.soundType) {
+                Picker("Pomodoro Sound", selection: $settings.workSoundType) {
                     ForEach(SoundType.allCases) { soundType in
                         Text(soundType.rawValue).tag(soundType)
                     }
                 }
 
-                Button("Test Sound") {
-                    testSound()
+                Button("Test Pomodoro Sound") {
+                    testSound(soundType: settings.workSoundType)
+                }
+
+                Picker("Break Sound", selection: $settings.breakSoundType) {
+                    ForEach(SoundType.allCases) { soundType in
+                        Text(soundType.rawValue).tag(soundType)
+                    }
+                }
+
+                Button("Test Break Sound") {
+                    testSound(soundType: settings.breakSoundType)
                 }
             }
         }
@@ -41,14 +51,14 @@ struct NotificationSettingsSection: View {
         }
     }
 
-    private func testSound() {
+    private func testSound(soundType: SoundType) {
         guard settings.shouldPlaySound else { return }
 
         // Stop any currently playing sound
         currentSound?.stop()
         currentSound = nil
 
-        if let soundName = settings.soundType.systemSoundName {
+        if let soundName = soundType.systemSoundName {
             if let sound = NSSound(named: soundName) {
                 currentSound = sound
                 sound.play()

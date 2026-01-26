@@ -59,6 +59,8 @@ final class NotificationSettings: ObservableObject {
     
     @AppStorage("soundEnabled") var soundEnabled: Bool = true
     @AppStorage("soundType") private var soundTypeRawValue: String = SoundType.default.rawValue
+    @AppStorage("workSoundType") private var workSoundTypeRawValue: String = SoundType.bell.rawValue
+    @AppStorage("breakSoundType") private var breakSoundTypeRawValue: String = SoundType.chime.rawValue
     
     var soundType: SoundType {
         get {
@@ -69,12 +71,32 @@ final class NotificationSettings: ObservableObject {
         }
     }
     
+    var workSoundType: SoundType {
+        get {
+            SoundType.allCases.first(where: { $0.rawValue == workSoundTypeRawValue }) ?? .bell
+        }
+        set {
+            workSoundTypeRawValue = newValue.rawValue
+        }
+    }
+    
+    var breakSoundType: SoundType {
+        get {
+            SoundType.allCases.first(where: { $0.rawValue == breakSoundTypeRawValue }) ?? .chime
+        }
+        set {
+            breakSoundTypeRawValue = newValue.rawValue
+        }
+    }
+    
     private init() {}
 
     func resetToDefaults() {
         objectWillChange.send()
         soundEnabled = true
         soundTypeRawValue = SoundType.default.rawValue
+        workSoundTypeRawValue = SoundType.bell.rawValue
+        breakSoundTypeRawValue = SoundType.chime.rawValue
     }
 
     var shouldPlaySound: Bool {
