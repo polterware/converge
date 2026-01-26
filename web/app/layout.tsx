@@ -20,9 +20,9 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Converge | Pomodoro para Mac",
+  title: "Converge | Pomodoro for Mac",
   description:
-    "Pomodoro nativo para macOS. Timer, estatísticas e foco de verdade — no Mac, longe do celular.",
+    "Native Pomodoro for macOS. Timer, statistics and real focus — on Mac, away from your phone.",
 };
 
 export default function RootLayout({
@@ -31,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={inter.variable}>
+    <html lang="en" className={inter.variable}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} antialiased`}
       >

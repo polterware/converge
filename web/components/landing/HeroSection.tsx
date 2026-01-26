@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
+import { Download, Github } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
@@ -20,12 +20,12 @@ export function HeroSection() {
   );
 
   useEffect(() => {
-    // Se já tem URL configurada, não precisa buscar
+    // If URL is already configured, no need to fetch
     if (process.env.NEXT_PUBLIC_DMG_DOWNLOAD_URL) {
       return;
     }
 
-    // Buscar versão mais recente da API
+    // Fetch latest version from API
     fetch("/api/releases?type=latest")
       .then((res) => {
         if (res.ok) {
@@ -38,7 +38,7 @@ export function HeroSection() {
       })
       .catch((error) => {
         console.error("Error fetching latest release:", error);
-        // Manter estado atual (sem URL = botão desabilitado)
+        // Keep current state (no URL = button disabled)
       });
   }, []);
 
@@ -104,6 +104,25 @@ export function HeroSection() {
               </Button>
             </motion.div>
           )}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            onHoverStart={() => setChaos(0.2)}
+            onHoverEnd={() => setChaos(1.5)}
+          >
+            <Button asChild size="lg" variant="ghost">
+              <a
+                href="https://github.com/rckbrcls/converge"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2"
+              >
+                <Github className="size-4" />
+                GitHub
+              </a>
+            </Button>
+          </motion.div>
         </motion.div>
       </div>
     </section>

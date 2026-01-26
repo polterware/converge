@@ -20,12 +20,12 @@ export function DownloadSection() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    // Se já tem URL configurada, não precisa buscar
+    // If URL is already configured, no need to fetch
     if (process.env.NEXT_PUBLIC_DMG_DOWNLOAD_URL) {
       return;
     }
 
-    // Buscar versão mais recente da API
+    // Fetch latest version from API
     let cancelled = false;
 
     const fetchRelease = async () => {
@@ -44,7 +44,7 @@ export function DownloadSection() {
       } catch (error) {
         if (!cancelled) {
           console.error("Error fetching latest release:", error);
-          // Manter estado atual (sem URL = botão desabilitado)
+          // Keep current state (no URL = button disabled)
         }
       } finally {
         if (!cancelled) {
@@ -147,6 +147,15 @@ export function DownloadSection() {
           className="underline hover:text-foreground transition-colors"
         >
           polterware
+        </a>
+        {" · "}
+        <a
+          href="https://github.com/rckbrcls/converge"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline hover:text-foreground transition-colors"
+        >
+          GitHub
         </a>
       </motion.footer>
     </motion.section>
