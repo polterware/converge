@@ -60,8 +60,8 @@ final class NotificationSettings: ObservableObject {
     @AppStorage("notificationsEnabled") var notificationsEnabled: Bool = true
     @AppStorage("soundEnabled") var soundEnabled: Bool = true
     @AppStorage("soundType") private var soundTypeRawValue: String = SoundType.default.rawValue
-    @AppStorage("workSoundType") private var workSoundTypeRawValue: String = SoundType.bell.rawValue
-    @AppStorage("breakSoundType") private var breakSoundTypeRawValue: String = SoundType.chime.rawValue
+    @AppStorage("workSoundType") private var workSoundTypeRawValue: String = SoundType.glass.rawValue
+    @AppStorage("breakSoundType") private var breakSoundTypeRawValue: String = SoundType.bell.rawValue
     
     var soundType: SoundType {
         get {
@@ -74,7 +74,7 @@ final class NotificationSettings: ObservableObject {
     
     var workSoundType: SoundType {
         get {
-            SoundType.allCases.first(where: { $0.rawValue == workSoundTypeRawValue }) ?? .bell
+            SoundType.allCases.first(where: { $0.rawValue == workSoundTypeRawValue }) ?? .glass
         }
         set {
             workSoundTypeRawValue = newValue.rawValue
@@ -83,7 +83,7 @@ final class NotificationSettings: ObservableObject {
     
     var breakSoundType: SoundType {
         get {
-            SoundType.allCases.first(where: { $0.rawValue == breakSoundTypeRawValue }) ?? .chime
+            SoundType.allCases.first(where: { $0.rawValue == breakSoundTypeRawValue }) ?? .bell
         }
         set {
             breakSoundTypeRawValue = newValue.rawValue
@@ -97,8 +97,8 @@ final class NotificationSettings: ObservableObject {
         notificationsEnabled = true
         soundEnabled = true
         soundTypeRawValue = SoundType.default.rawValue
-        workSoundTypeRawValue = SoundType.bell.rawValue
-        breakSoundTypeRawValue = SoundType.chime.rawValue
+        workSoundTypeRawValue = SoundType.glass.rawValue
+        breakSoundTypeRawValue = SoundType.bell.rawValue
     }
 
     var shouldPlaySound: Bool {
