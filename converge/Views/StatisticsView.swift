@@ -83,13 +83,14 @@ struct StatisticsView: View {
                 }
             }
             .chartYAxis {
-                AxisMarks { _ in
+                AxisMarks(position: .leading) { _ in
                     AxisGridLine()
                         .foregroundStyle(phaseColors.secondary.opacity(0.3))
                     AxisValueLabel()
                         .foregroundStyle(phaseColors.secondary)
                 }
             }
+            .padding(.leading, 32)
             .animation(.easeInOut(duration: 0.3), value: timer.phase)
             .animation(.easeInOut(duration: 0.3), value: timer.isRunning)
         }

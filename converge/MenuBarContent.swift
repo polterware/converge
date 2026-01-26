@@ -13,16 +13,20 @@ struct MenuBarContent: View {
 
     var body: some View {
         Group {
-            Button(timer.isRunning ? "Pause" : "Start") {
+            Button {
                 if timer.isRunning {
                     timer.pause()
                 } else {
                     timer.start()
                 }
+            } label: {
+                Label(timer.isRunning ? "Pause" : "Start", systemImage: timer.isRunning ? "pause.fill" : "play.fill")
             }
 
-            Button("Reset") {
+            Button {
                 timer.reset()
+            } label: {
+                Label("Reset", systemImage: "arrow.counterclockwise")
             }
 
             Divider()
@@ -31,19 +35,25 @@ struct MenuBarContent: View {
                 .font(.caption)
                 .foregroundStyle(.secondary)
 
-            Button("Open Window") {
+            Button {
                 activateAndOpenWindow(id: "main")
+            } label: {
+                Label("Open Window", systemImage: "square.on.square")
             }
 
-            Button("Settings...") {
+            Button {
                 activateAndOpenWindow(id: "converge-settings")
+            } label: {
+                Label("Settings...", systemImage: "gearshape.fill")
             }
             .keyboardShortcut(",", modifiers: .command)
 
             Divider()
 
-            Button("Quit") {
+            Button {
                 NSApplication.shared.terminate(nil)
+            } label: {
+                Label("Quit", systemImage: "power")
             }
         }
         .onAppear {
