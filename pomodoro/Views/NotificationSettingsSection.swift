@@ -47,10 +47,48 @@ struct NotificationSettingsSection: View {
     private func testSound() {
         guard settings.shouldPlaySound else { return }
 
-        if let soundName = settings.soundType.systemSoundName {
-            NSSound(named: soundName)?.play()
+        let soundName = settings.soundType.systemSoundName
+        
+        if let soundName = soundName {
+            // Try to load and play the system sound
+            if let sound = NSSound(named: soundName) {
+                sound.play()
+            } else {
+                // If the sound is not found, try alternative names or fallback to beep
+                let alternativeNames = getAlternativeSoundNames(for: soundName)
+                var played = false
+                
+                for altName in alternativeNames {
+                    if let sound = NSSound(named: altName) {
+                        sound.play()
+                        played = true
+                        break
+                    }
+                }
+                
+                if !played {
+                    NSSound.beep()
+                }
+            }
         } else {
+            // Default sound - use beep
             NSSound.beep()
+        }
+    }
+    
+    private func getAlternativeSoundNames(for soundName: String) -> [String] {
+        // Map common sound names to their alternative names in macOS
+        switch soundName {
+        case "Bell":
+            return ["Basso", "Bell"]
+        case "Chime":
+            return ["Tink", "Chime"]
+        case "Note":
+            return ["Morse", "Note"]
+        case "Submerge":
+            return ["Submarine", "Submerge"]
+        default:
+            return [soundName]
         }
     }
 }

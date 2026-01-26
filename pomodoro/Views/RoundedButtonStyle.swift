@@ -68,6 +68,7 @@ struct RoundedBorderedButtonStyle: ButtonStyle {
                     .strokeBorder(color, lineWidth: 1)
             )
             .foregroundColor(color)
+            .contentShape(RoundedRectangle(cornerRadius: 24))
             .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
             .animation(.easeInOut(duration: 0.1), value: configuration.isPressed)
     }

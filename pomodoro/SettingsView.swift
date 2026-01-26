@@ -7,7 +7,6 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject private var settings: PomodoroSettings
-    @Environment(\.dismiss) private var dismiss
     
     @State private var workDuration: Int
     @State private var shortBreakDuration: Int
@@ -53,6 +52,16 @@ struct SettingsView: View {
                     range: 1...20,
                     unit: "count"
                 )
+                
+                Button {
+                    saveSettings()
+                } label: {
+                    HStack {
+                        Spacer()
+                        Text("Save")
+                        Spacer()
+                    }
+                }
             }
             
             Section("Visual Settings") {
@@ -80,26 +89,6 @@ struct SettingsView: View {
         }
         .formStyle(.grouped)
         .navigationTitle("Settings")
-        .toolbar {
-            ToolbarItem(placement: .cancellationAction) {
-                Button {
-                    dismiss()
-                } label: {
-                    Label("Cancel", systemImage: "xmark")
-                        .labelStyle(.titleAndIcon)
-                }
-                .help("Cancel")
-            }
-            ToolbarItem(placement: .confirmationAction) {
-                Button {
-                    saveSettings()
-                } label: {
-                    Label("Save", systemImage: "checkmark")
-                        .labelStyle(.titleAndIcon)
-                }
-                .help("Save")
-            }
-        }
         .onAppear {
             loadCurrentSettings()
         }
@@ -122,7 +111,6 @@ struct SettingsView: View {
         settings.shortBreakDurationMinutes = shortBreakDuration
         settings.longBreakDurationMinutes = longBreakDuration
         settings.pomodorosUntilLongBreak = pomodorosUntilLongBreak
-        dismiss()
     }
     
     private func resetToDefaults() {

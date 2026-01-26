@@ -113,7 +113,7 @@ struct pomodoroApp: App {
             .environmentObject(StatisticsStore.shared)
         }
         .windowResizability(.automatic)
-        .defaultSize(width: 420, height: 560)
+        .defaultSize(width: 400, height: 450)
         .commands {
             AppCommands()
         }
