@@ -8,11 +8,11 @@ export function DownloadSection() {
   return (
     <section
       className={cn(
-        "mx-auto max-w-2xl px-4 py-16 text-center",
+        "mx-auto flex min-h-[100svh] max-w-2xl flex-col items-center justify-center px-4 py-16 text-center",
         "sm:py-24 md:py-32"
       )}
     >
-      <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+      <h2 className="mb-4 font-serif text-3xl font-bold tracking-tight sm:text-4xl">
         Download Converge
       </h2>
       <p className="mb-8 text-muted-foreground">

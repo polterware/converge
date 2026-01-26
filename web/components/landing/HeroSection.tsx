@@ -8,11 +8,11 @@ export function HeroSection() {
   return (
     <section
       className={cn(
-        "flex flex-col items-center justify-center gap-6 px-4 py-16 text-center",
+        "flex min-h-[100svh] flex-col items-center justify-center gap-6 px-4 py-16 text-center",
         "sm:gap-8 sm:py-24 md:py-32"
       )}
     >
-      <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+      <h1 className="font-serif text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
         Converge
       </h1>
       <p className="max-w-2xl text-lg text-muted-foreground sm:text-xl">

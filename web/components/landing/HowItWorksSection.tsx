@@ -58,11 +58,11 @@ export function HowItWorksSection() {
   return (
     <section
       className={cn(
-        "mx-auto max-w-5xl px-4 py-16",
+        "mx-auto min-h-[100svh] max-w-5xl px-4 py-16",
         "sm:py-24 md:py-32"
       )}
     >
-      <h2 className="mb-4 text-center text-3xl font-bold tracking-tight sm:text-4xl">
+      <h2 className="mb-4 text-center font-serif text-3xl font-bold tracking-tight sm:text-4xl">
         How it works
       </h2>
       <p className="mx-auto mb-12 max-w-2xl text-center text-muted-foreground">
