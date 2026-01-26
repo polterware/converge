@@ -1,14 +1,14 @@
 //
-//  pomodoroTests.swift
-//  pomodoroTests
+//  convergeTests.swift
+//  convergeTests
 //
 //  Created by Erick Barcelos on 25/01/26.
 //
 
 import Testing
-@testable import pomodoro
+@testable import converge
 
-struct pomodoroTests {
+struct convergeTests {
 
     @Test @MainActor func pomodoroTimerStartsIdle() async throws {
         let timer = PomodoroTimer()

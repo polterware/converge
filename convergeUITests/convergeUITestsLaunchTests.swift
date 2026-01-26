@@ -1,13 +1,13 @@
 //
-//  pomodoroUITestsLaunchTests.swift
-//  pomodoroUITests
+//  convergeUITestsLaunchTests.swift
+//  convergeUITests
 //
 //  Created by Erick Barcelos on 25/01/26.
 //
 
 import XCTest
 
-final class pomodoroUITestsLaunchTests: XCTestCase {
+final class convergeUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

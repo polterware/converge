@@ -10,6 +10,15 @@ struct DurationRow: View {
     @Binding var value: Int
     let range: ClosedRange<Int>
     let unit: String
+    let iconName: String?
+    
+    init(label: String, value: Binding<Int>, range: ClosedRange<Int>, unit: String, iconName: String? = nil) {
+        self.label = label
+        self._value = value
+        self.range = range
+        self.unit = unit
+        self.iconName = iconName
+    }
     
     private var options: [Int] {
         generateRelevantOptions(for: range)
@@ -17,7 +26,15 @@ struct DurationRow: View {
     
     var body: some View {
         HStack {
-            Text(label)
+            if let iconName = iconName {
+                Label {
+                    Text(label)
+                } icon: {
+                    Image(systemName: iconName)
+                }
+            } else {
+                Text(label)
+            }
             Spacer()
             
             Picker("", selection: $value) {

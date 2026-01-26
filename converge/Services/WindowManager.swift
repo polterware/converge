@@ -21,7 +21,7 @@ final class WindowManager {
     func openSettingsWindow() {
         NSApp.activate(ignoringOtherApps: true)
         
-        let windowTitle = "Pomodoro Settings"
+        let windowTitle = "Converge Settings"
         
         // Check if window already exists
         if let existingWindow = NSApp.windows.first(where: { window in
@@ -32,7 +32,7 @@ final class WindowManager {
             existingWindow.orderFrontRegardless()
         } else {
             // Window doesn't exist, use the openWindow action if available
-            openWindowAction?("pomodoro-settings")
+            openWindowAction?("converge-settings")
         }
     }
 }

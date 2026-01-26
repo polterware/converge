@@ -36,7 +36,7 @@ struct MenuBarContent: View {
             }
 
             Button("Settings...") {
-                activateAndOpenWindow(id: "pomodoro-settings")
+                activateAndOpenWindow(id: "converge-settings")
             }
             .keyboardShortcut(",", modifiers: .command)
 
@@ -59,7 +59,7 @@ struct MenuBarContent: View {
         // Map window IDs to titles for finding existing windows
         let windowTitles: [String: String] = [
             "main": "",
-            "pomodoro-settings": "Pomodoro Settings"
+            "converge-settings": "Converge Settings"
         ]
         
         let targetTitle = windowTitles[id] ?? ""

@@ -46,7 +46,11 @@ final class ThemeSettings: ObservableObject {
     private func save() {
         UserDefaults.standard.set(selectedTheme.rawValue, forKey: Keys.selectedTheme)
     }
-    
+
+    func resetToDefaults() {
+        selectedTheme = Self.defaultTheme
+    }
+
     var currentColorScheme: ColorScheme? {
         switch selectedTheme {
         case .light:

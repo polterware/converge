@@ -71,7 +71,14 @@ final class NotificationSettings: ObservableObject {
     }
     
     private init() {}
-    
+
+    func resetToDefaults() {
+        objectWillChange.send()
+        soundEnabled = true
+        silentMode = false
+        soundTypeRawValue = SoundType.default.rawValue
+    }
+
     var shouldPlaySound: Bool {
         soundEnabled && !silentMode
     }

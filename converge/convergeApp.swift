@@ -1,6 +1,6 @@
 //
-//  pomodoroApp.swift
-//  pomodoro
+//  convergeApp.swift
+//  converge
 //
 //  Created by Erick Barcelos on 25/01/26.
 //
@@ -40,7 +40,7 @@ struct WindowManagerSetupView: View {
             WindowManager.shared.setOpenWindowAction { id in
                 NSApp.activate(ignoringOtherApps: true)
                 
-                let windowTitle = id == "main" ? "" : "Pomodoro Settings"
+                let windowTitle = id == "main" ? "" : "Converge Settings"
                 
                 // Check if window already exists
                 if let existingWindow = NSApp.windows.first(where: { window in
@@ -72,7 +72,7 @@ struct AppCommands: Commands {
 }
 
 @main
-struct pomodoroApp: App {
+struct convergeApp: App {
     @StateObject private var pomodoroSettings: PomodoroSettings
     @StateObject private var pomodoroTimer: PomodoroTimer
     @StateObject private var themeSettings: ThemeSettings
@@ -103,7 +103,7 @@ struct pomodoroApp: App {
             AppCommands()
         }
 
-        Window("Pomodoro Settings", id: "pomodoro-settings") {
+        Window("Converge Settings", id: "converge-settings") {
             NavigationStack {
                 SettingsView()
             }
@@ -114,7 +114,7 @@ struct pomodoroApp: App {
             .preferredColorScheme(themeSettings.currentColorScheme)
         }
         .windowResizability(.automatic)
-        .defaultSize(width: 400, height: 450)
+        .defaultSize(width: 480, height: 450)
         .commands {
             AppCommands()
         }
