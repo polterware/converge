@@ -58,7 +58,6 @@ final class NotificationSettings: ObservableObject {
     static let shared = NotificationSettings()
     
     @AppStorage("soundEnabled") var soundEnabled: Bool = true
-    @AppStorage("silentMode") var silentMode: Bool = false
     @AppStorage("soundType") private var soundTypeRawValue: String = SoundType.default.rawValue
     
     var soundType: SoundType {
@@ -75,11 +74,10 @@ final class NotificationSettings: ObservableObject {
     func resetToDefaults() {
         objectWillChange.send()
         soundEnabled = true
-        silentMode = false
         soundTypeRawValue = SoundType.default.rawValue
     }
 
     var shouldPlaySound: Bool {
-        soundEnabled && !silentMode
+        soundEnabled
     }
 }

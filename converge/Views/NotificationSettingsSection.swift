@@ -15,9 +15,6 @@ struct NotificationSettingsSection: View {
             Toggle("Enable Sound", isOn: $settings.soundEnabled)
 
             if settings.soundEnabled {
-                Toggle("Silent Mode", isOn: $settings.silentMode)
-                    .help("When enabled, notifications will be sent without sound")
-
                 Picker("Sound Type", selection: $settings.soundType) {
                     ForEach(SoundType.allCases) { soundType in
                         Text(soundType.rawValue).tag(soundType)
@@ -27,7 +24,6 @@ struct NotificationSettingsSection: View {
                 Button("Test Sound") {
                     testSound()
                 }
-                .disabled(settings.silentMode)
             }
         }
 
