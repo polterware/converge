@@ -63,6 +63,7 @@ struct PomodoroView: View {
                                 systemImage: timer.isRunning ? "pause.fill" : "play.fill"
                             )
                             .labelStyle(.titleAndIcon)
+                            .contentShape(Rectangle())
                         }
                         .buttonStyle(RoundedBorderedProminentButtonStyle(color: phaseColors.accent))
                         .animation(.easeInOut(duration: 0.3), value: timer.phase)
@@ -74,6 +75,7 @@ struct PomodoroView: View {
                         } label: {
                             Label("Reset", systemImage: "arrow.counterclockwise")
                                 .labelStyle(.titleAndIcon)
+                                .contentShape(Rectangle())
                         }
                         .buttonStyle(RoundedBorderedButtonStyle(color: phaseColors.primary))
                         .animation(.easeInOut(duration: 0.3), value: timer.phase)
