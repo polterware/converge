@@ -1,8 +1,15 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is the institutional landing page for [Converge](https://github.com/your-org/pomodoro), a Pomodoro app for macOS.
 
 ## Getting Started
 
-First, run the development server:
+Copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_DMG_DOWNLOAD_URL` to your DMG download URL (e.g. GitHub Releases) so the download buttons work.
+
+```bash
+cp .env.example .env.local
+# Edit .env.local and set NEXT_PUBLIC_DMG_DOWNLOAD_URL
+```
+
+Then run the development server:
 
 ```bash
 npm run dev
