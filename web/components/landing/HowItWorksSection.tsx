@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Card,
   CardContent,
@@ -14,6 +16,7 @@ import {
   ClipboardList,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
 
 const features = [
   {
@@ -56,32 +59,72 @@ const features = [
 
 export function HowItWorksSection() {
   return (
-    <section
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
       className={cn(
         "mx-auto min-h-[100svh] max-w-5xl px-4 py-16",
         "sm:py-24 md:py-32"
       )}
     >
-      <h2 className="mb-4 text-center font-serif text-3xl font-bold tracking-tight sm:text-4xl">
+      <motion.h2
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="mb-4 text-center font-serif text-3xl font-bold tracking-tight sm:text-4xl"
+      >
         How it works
-      </h2>
-      <p className="mx-auto mb-12 max-w-2xl text-center text-muted-foreground">
+      </motion.h2>
+      <motion.p
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+        className="mx-auto mb-12 max-w-2xl text-center text-muted-foreground"
+      >
         Native Pomodoro timer for macOS. Statistics, history and notifications
         without taking you out of the flow.
-      </p>
+      </motion.p>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {features.map(({ icon: Icon, title, description }) => (
-          <Card key={title} size="sm" className="flex flex-col">
-            <CardHeader>
-              <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                <Icon className="size-5" />
-              </div>
-              <CardTitle className="text-base">{title}</CardTitle>
-              <CardDescription className="text-sm">{description}</CardDescription>
-            </CardHeader>
-          </Card>
+        {features.map(({ icon: Icon, title, description }, index) => (
+          <motion.div
+            key={title}
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{
+              duration: 0.5,
+              ease: "easeOut",
+              delay: 0.2 + index * 0.1,
+            }}
+          >
+            <Card size="sm" className="flex flex-col">
+              <CardHeader>
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.4,
+                    ease: "easeOut",
+                    delay: 0.3 + index * 0.1,
+                  }}
+                  className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary"
+                >
+                  <Icon className="size-5" />
+                </motion.div>
+                <CardTitle className="text-base">{title}</CardTitle>
+                <CardDescription className="text-sm">{description}</CardDescription>
+              </CardHeader>
+            </Card>
+          </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }
