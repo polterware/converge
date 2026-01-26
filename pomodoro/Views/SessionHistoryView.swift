@@ -54,7 +54,9 @@ struct SessionHistoryView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     SessionHistoryView()
         .environmentObject(StatisticsStore.shared)
 }
+#endif

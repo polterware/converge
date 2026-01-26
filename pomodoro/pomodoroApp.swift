@@ -25,7 +25,7 @@ struct pomodoroApp: App {
     }
 
     var body: some Scene {
-        WindowGroup {
+        WindowGroup(id: "main") {
             TabView {
                 PomodoroView()
                     .tabItem { Label("Timer", systemImage: "timer") }
@@ -42,6 +42,24 @@ struct pomodoroApp: App {
         }
         .windowResizability(.automatic)
         .defaultSize(width: 400, height: 500)
+
+        Window("Pomodoro Settings", id: "pomodoro-settings") {
+            NavigationStack {
+                SettingsView()
+            }
+            .environmentObject(pomodoroTimer)
+            .environmentObject(pomodoroSettings)
+            .environmentObject(themeSettings)
+            .environmentObject(StatisticsStore.shared)
+        }
+        .windowResizability(.automatic)
+        .defaultSize(width: 420, height: 480)
+
+        Window("Notification Settings", id: "notification-settings") {
+            NotificationSettingsView()
+        }
+        .windowResizability(.automatic)
+        .defaultSize(width: 400, height: 320)
 
         MenuBarExtra {
             MenuBarContent()

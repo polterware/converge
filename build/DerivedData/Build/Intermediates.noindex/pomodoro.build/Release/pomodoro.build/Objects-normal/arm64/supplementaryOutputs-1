@@ -1,0 +1,12 @@
+{
+  "/Users/erickpatrickbarcelos/codes/pomodoro/pomodoro/Models/PhaseColors.swift" : {
+    "abi-baseline-json" : "/Users/erickpatrickbarcelos/codes/pomodoro/build/DerivedData/Build/Intermediates.noindex/pomodoro.build/Release/pomodoro.build/Objects-normal/arm64/pomodoro.abi.json",
+    "const-values" : "/Users/erickpatrickbarcelos/codes/pomodoro/build/DerivedData/Build/Intermediates.noindex/pomodoro.build/Release/pomodoro.build/Objects-normal/arm64/pomodoro-primary.swiftconstvalues",
+    "dependencies" : "/Users/erickpatrickbarcelos/codes/pomodoro/build/DerivedData/Build/Intermediates.noindex/pomodoro.build/Release/pomodoro.build/Objects-normal/arm64/pomodoro-primary.d",
+    "diagnostics" : "/Users/erickpatrickbarcelos/codes/pomodoro/build/DerivedData/Build/Intermediates.noindex/pomodoro.build/Release/pomodoro.build/Objects-normal/arm64/pomodoro-primary.dia",
+    "objc-header" : "/Users/erickpatrickbarcelos/codes/pomodoro/build/DerivedData/Build/Intermediates.noindex/pomodoro.build/Release/pomodoro.build/Objects-normal/arm64/pomodoro-Swift.h",
+    "swiftdoc" : "/Users/erickpatrickbarcelos/codes/pomodoro/build/DerivedData/Build/Intermediates.noindex/pomodoro.build/Release/pomodoro.build/Objects-normal/arm64/pomodoro.swiftdoc",
+    "swiftmodule" : "/Users/erickpatrickbarcelos/codes/pomodoro/build/DerivedData/Build/Intermediates.noindex/pomodoro.build/Release/pomodoro.build/Objects-normal/arm64/pomodoro.swiftmodule",
+    "swiftsourceinfo" : "/Users/erickpatrickbarcelos/codes/pomodoro/build/DerivedData/Build/Intermediates.noindex/pomodoro.build/Release/pomodoro.build/Objects-normal/arm64/pomodoro.swiftsourceinfo"
+  }
+}

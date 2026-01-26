@@ -1,0 +1,48 @@
+{
+  "source": "/Users/erickpatrickbarcelos/codes/pomodoro/pomodoro/pomodoroApp.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Pomodoro Settings",
+        "location": {
+          "startingColumn": 16,
+          "startingLine": 46
+        }
+      },
+      {
+        "comment": "",
+        "key": "Notification Settings",
+        "location": {
+          "startingColumn": 16,
+          "startingLine": 58
+        }
+      },
+      {
+        "comment": "",
+        "key": "Timer",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 31
+        }
+      },
+      {
+        "comment": "",
+        "key": "Statistics",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 33
+        }
+      },
+      {
+        "comment": "",
+        "key": "History",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 35
+        }
+      }
+    ]
+  },
+  "version": 1
+}

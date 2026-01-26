@@ -65,7 +65,9 @@ private struct StatCounter: View {
     }
 }
 
+#if DEBUG
 #Preview {
     StatisticsView()
         .environmentObject(StatisticsStore.shared)
 }
+#endif

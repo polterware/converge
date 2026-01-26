@@ -78,10 +78,19 @@ struct PomodoroView: View {
             .toolbar {
                 ToolbarItem(placement: .automatic) {
                     Button {
+                        CompactWindowService.resetToCompactSize()
+                    } label: {
+                        Image(systemName: "rectangle.compress.vertical")
+                            .foregroundStyle(.secondary)
+                    }
+                    .help("Restore compact window size")
+                }
+                ToolbarItem(placement: .automatic) {
+                    Button {
                         showSettings = true
                     } label: {
                         Image(systemName: "gearshape")
-                            .foregroundColor(phaseColors.primary)
+                            .foregroundStyle(.secondary)
                     }
                 }
             }

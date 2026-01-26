@@ -6,7 +6,7 @@
 	<integer>12</integer>
 	<key>logs</key>
 	<dict>
-		<key>049AA1E4-DC41-4898-A290-755DD2446801</key>
+		<key>02D2A1FC-D46B-4319-B0AC-B4D6462197A3</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>049AA1E4-DC41-4898-A290-755DD2446801.xcactivitylog</string>
+			<string>02D2A1FC-D46B-4319-B0AC-B4D6462197A3.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -38,15 +38,99 @@
 			<key>schemeIdentifier-sharedScheme</key>
 			<integer>1</integer>
 			<key>signature</key>
-			<string>Building project pomodoro with scheme pomodoro</string>
+			<string>Cleaning project pomodoro with scheme pomodoro and configuration Release</string>
 			<key>timeStartedRecording</key>
-			<real>791076490.03069603</real>
+			<real>791078540.97021794</real>
 			<key>timeStoppedRecording</key>
-			<real>791076501.18247402</real>
+			<real>791078541.34219897</real>
 			<key>title</key>
-			<string>Building project pomodoro with scheme pomodoro</string>
+			<string>Cleaning project pomodoro with scheme pomodoro and configuration Release</string>
 			<key>uniqueIdentifier</key>
-			<string>049AA1E4-DC41-4898-A290-755DD2446801</string>
+			<string>02D2A1FC-D46B-4319-B0AC-B4D6462197A3</string>
+		</dict>
+		<key>A6E33458-94DE-41E6-8D36-142D9807DF1B</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>A6E33458-94DE-41E6-8D36-142D9807DF1B.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>pomodoro project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>pomodoro</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Cleaning project pomodoro with scheme pomodoro and configuration Release</string>
+			<key>timeStartedRecording</key>
+			<real>791078588.40973103</real>
+			<key>timeStoppedRecording</key>
+			<real>791078588.83200395</real>
+			<key>title</key>
+			<string>Cleaning project pomodoro with scheme pomodoro and configuration Release</string>
+			<key>uniqueIdentifier</key>
+			<string>A6E33458-94DE-41E6-8D36-142D9807DF1B</string>
+		</dict>
+		<key>BA5FFB89-61CC-4BD1-A8FC-4090698FF632</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>BA5FFB89-61CC-4BD1-A8FC-4090698FF632.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>pomodoro project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>pomodoro</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Cleaning project pomodoro with scheme pomodoro and configuration Release</string>
+			<key>timeStartedRecording</key>
+			<real>791078552.97280395</real>
+			<key>timeStoppedRecording</key>
+			<real>791078553.24854696</real>
+			<key>title</key>
+			<string>Cleaning project pomodoro with scheme pomodoro and configuration Release</string>
+			<key>uniqueIdentifier</key>
+			<string>BA5FFB89-61CC-4BD1-A8FC-4090698FF632</string>
 		</dict>
 	</dict>
 </dict>

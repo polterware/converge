@@ -7,10 +7,9 @@ import SwiftUI
 import AppKit
 
 struct MenuBarContent: View {
+    @Environment(\.openWindow) private var openWindow
     @EnvironmentObject private var timer: PomodoroTimer
     @EnvironmentObject private var store: StatisticsStore
-    @State private var showNotificationSettings = false
-    @State private var showPomodoroSettings = false
 
     var body: some View {
         Group {
@@ -33,15 +32,15 @@ struct MenuBarContent: View {
                 .foregroundStyle(.secondary)
 
             Button("Open Window") {
-                openMainWindow()
+                activateAndOpenWindow(id: "main")
             }
-            
+
             Button("Pomodoro Settings...") {
-                showPomodoroSettings = true
+                activateAndOpenWindow(id: "pomodoro-settings")
             }
-            
+
             Button("Notification Settings...") {
-                showNotificationSettings = true
+                activateAndOpenWindow(id: "notification-settings")
             }
 
             Divider()
@@ -50,21 +49,10 @@ struct MenuBarContent: View {
                 NSApplication.shared.terminate(nil)
             }
         }
-        .sheet(isPresented: $showNotificationSettings) {
-            NotificationSettingsView()
-        }
-        .sheet(isPresented: $showPomodoroSettings) {
-            NavigationStack {
-                SettingsView()
-            }
-        }
     }
 
-    private func openMainWindow() {
+    private func activateAndOpenWindow(id: String) {
         NSApp.activate(ignoringOtherApps: true)
-        for window in NSApp.windows where window.canBecomeMain && window.isVisible {
-            window.makeKeyAndOrderFront(nil)
-            break
-        }
+        openWindow(id: id)
     }
 }
