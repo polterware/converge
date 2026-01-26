@@ -15,7 +15,7 @@ struct PomodoroView: View {
         NavigationStack {
             ZStack {
                 phaseColors.background
-                    .ignoresSafeArea()
+                    .ignoresSafeArea(edges: .all.subtracting(.top))
                     .animation(.easeInOut(duration: 0.5), value: timer.phase)
                 
                 VStack(spacing: 20) {
@@ -78,7 +78,7 @@ struct PomodoroView: View {
                     Button {
                         CompactWindowService.resetToCompactSize()
                     } label: {
-                        Label("Compact", systemImage: "rectangle.compress.vertical")
+                        Label("Compact", systemImage: "arrow.down.right.and.arrow.up.left")
                             .labelStyle(.titleAndIcon)
                             .foregroundStyle(.secondary)
                     }

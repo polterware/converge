@@ -7,6 +7,9 @@ import SwiftUI
 
 struct SessionHistoryView: View {
     @EnvironmentObject private var store: StatisticsStore
+    @EnvironmentObject private var timer: PomodoroTimer
+    @EnvironmentObject private var themeSettings: ThemeSettings
+    @Environment(\.colorScheme) private var systemColorScheme
     @State private var showSettings = false
 
     private static let dateFormatter: DateFormatter = {
@@ -20,40 +23,52 @@ struct SessionHistoryView: View {
         let sessions = store.recentSessions(limit: 50)
 
         NavigationStack {
-            Group {
-                if sessions.isEmpty {
-                    VStack(spacing: 16) {
-                        Image(systemName: "clock.badge.questionmark")
-                            .font(.system(size: 48))
-                            .foregroundStyle(.secondary)
-                        Text("No sessions yet")
-                            .font(.headline)
-                            .foregroundStyle(.primary)
-                        Text("Complete a pomodoro session to see it here")
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
-                            .multilineTextAlignment(.center)
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(.ultraThinMaterial)
-                    .clipShape(RoundedRectangle(cornerRadius: 24))
-                } else {
-                    List {
-                        ForEach(sessions) { session in
-                            HStack {
-                                Text(Self.dateFormatter.string(from: session.completedAt))
-                                Spacer()
-                                Text(durationLabel(session.durationSeconds))
-                                    .foregroundStyle(.secondary)
+            ZStack {
+                phaseColors.background
+                    .ignoresSafeArea(edges: .all.subtracting(.top))
+                    .animation(.easeInOut(duration: 0.5), value: timer.phase)
+                
+                Group {
+                    if sessions.isEmpty {
+                        VStack(spacing: 16) {
+                            Image(systemName: "clock.badge.questionmark")
+                                .font(.system(size: 48))
+                                .foregroundStyle(.secondary)
+                            Text("No sessions yet")
+                                .font(.headline)
+                                .foregroundStyle(.primary)
+                            Text("Complete a pomodoro session to see it here")
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                                .multilineTextAlignment(.center)
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    } else {
+                        List {
+                            ForEach(sessions) { session in
+                                HStack {
+                                    Text(Self.dateFormatter.string(from: session.completedAt))
+                                    Spacer()
+                                    Text(durationLabel(session.durationSeconds))
+                                        .foregroundStyle(.secondary)
+                                }
                             }
                         }
                     }
-                    .background(.ultraThinMaterial)
-                    .clipShape(RoundedRectangle(cornerRadius: 24))
                 }
             }
             .navigationTitle("History")
             .toolbar {
+                ToolbarItem(placement: .automatic) {
+                    Button {
+                        CompactWindowService.resetToCompactSize()
+                    } label: {
+                        Label("Compact", systemImage: "arrow.down.right.and.arrow.up.left")
+                            .labelStyle(.titleAndIcon)
+                            .foregroundStyle(.secondary)
+                    }
+                    .help("Restore compact window size")
+                }
                 ToolbarItem(placement: .automatic) {
                     Button {
                         showSettings = true
@@ -71,6 +86,14 @@ struct SessionHistoryView: View {
             }
         }
     }
+    
+    private var effectiveColorScheme: ColorScheme {
+        themeSettings.currentColorScheme ?? systemColorScheme
+    }
+    
+    private var phaseColors: PhaseColors {
+        PhaseColors.color(for: timer.phase, colorScheme: effectiveColorScheme)
+    }
 
     private func durationLabel(_ seconds: Int) -> String {
         let minutes = seconds / 60
@@ -80,9 +103,11 @@ struct SessionHistoryView: View {
 
 #if DEBUG
 #Preview {
+    let settings = PomodoroSettings()
     SessionHistoryView()
         .environmentObject(StatisticsStore.shared)
-        .environmentObject(PomodoroSettings())
+        .environmentObject(PomodoroTimer(settings: settings))
+        .environmentObject(settings)
         .environmentObject(ThemeSettings())
 }
 #endif

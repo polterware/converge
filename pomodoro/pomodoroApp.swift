@@ -28,12 +28,22 @@ struct pomodoroApp: App {
         WindowGroup(id: "main") {
             TabView {
                 PomodoroView()
-                    .tabItem { Label("Timer", systemImage: "timer") }
+                    .tabItem {
+                        Image(systemName: "stopwatch.fill")
+                        Text("Timer")
+                    }
                 StatisticsView()
-                    .tabItem { Label("Statistics", systemImage: "chart.bar") }
+                    .tabItem {
+                        Image(systemName: "chart.bar.fill")
+                        Text("Statistics")
+                    }
                 SessionHistoryView()
-                    .tabItem { Label("History", systemImage: "list.bullet") }
+                    .tabItem {
+                        Image(systemName: "clock.arrow.circlepath")
+                        Text("History")
+                    }
             }
+            .tabViewStyle(.automatic)
             .environmentObject(pomodoroTimer)
             .environmentObject(pomodoroSettings)
             .environmentObject(themeSettings)
