@@ -12,8 +12,12 @@ final class NotificationManager {
     
     private let settings = NotificationSettings.shared
     private let notificationCenter = UNUserNotificationCenter.current()
+    private let notificationDelegate = NotificationDelegate()
     
-    private init() {}
+    private init() {
+        // Configure delegate to always show notifications, even when window is active
+        notificationCenter.delegate = notificationDelegate
+    }
     
     func requestAuthorization() async {
         do {
@@ -63,5 +67,17 @@ final class NotificationManager {
                 print("Failed to send notification: \(error)")
             }
         }
+    }
+}
+
+// Delegate to force notifications to always be presented, even when app window is active
+private class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification,
+        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
+    ) {
+        // Always present notification as banner, even when app is in foreground
+        completionHandler([.banner, .sound, .badge])
     }
 }
