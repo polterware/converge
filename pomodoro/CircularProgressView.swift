@@ -34,6 +34,8 @@ struct CircularProgressView: View {
                 )
                 .rotationEffect(.degrees(-90))
                 .animation(.linear(duration: 0.3), value: progress)
+                .shadow(color: color.opacity(0.5), radius: 6, x: 0, y: 3)
+                .shadow(color: .black.opacity(0.2), radius: 8, x: 0, y: 4)
         }
     }
 }
