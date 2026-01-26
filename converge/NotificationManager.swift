@@ -34,6 +34,10 @@ final class NotificationManager {
     }
     
     func sendWorkCompleteNotification() {
+        // Play sound regardless of notification settings
+        playWorkSound()
+        
+        // Only send notification if enabled
         guard settings.notificationsEnabled else {
             return
         }
@@ -48,6 +52,10 @@ final class NotificationManager {
     }
     
     func sendBreakCompleteNotification() {
+        // Play sound regardless of notification settings
+        playBreakSound()
+        
+        // Only send notification if enabled
         guard settings.notificationsEnabled else {
             return
         }
@@ -121,16 +129,8 @@ private class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
         willPresent notification: UNNotification,
         withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
     ) {
-        // Play the appropriate sound based on notification type
-        Task { @MainActor in
-            if let notificationType = notification.request.content.userInfo["notificationType"] as? String {
-                if notificationType == "work" {
-                    notificationManager?.playWorkSound()
-                } else if notificationType == "break" {
-                    notificationManager?.playBreakSound()
-                }
-            }
-        }
+        // Note: Sounds are now played before sending the notification,
+        // so we don't need to play them here again
         
         // Always present notification as banner, even when app is in foreground
         // Note: We don't include .sound here since we're playing the sound manually
