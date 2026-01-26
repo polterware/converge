@@ -111,6 +111,7 @@ struct pomodoroApp: App {
             .environmentObject(pomodoroSettings)
             .environmentObject(themeSettings)
             .environmentObject(StatisticsStore.shared)
+            .preferredColorScheme(themeSettings.currentColorScheme)
         }
         .windowResizability(.automatic)
         .defaultSize(width: 400, height: 450)

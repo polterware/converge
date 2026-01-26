@@ -1,0 +1,40 @@
+{
+  "source": "/Users/erickpatrickbarcelos/codes/pomodoro/pomodoro/Views/UpdateSettingsSection.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Updates",
+        "location": {
+          "startingColumn": 17,
+          "startingLine": 15
+        }
+      },
+      {
+        "comment": "",
+        "key": "Current Version",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 17
+        }
+      },
+      {
+        "comment": "",
+        "key": "Check for Updates",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 39
+        }
+      },
+      {
+        "comment": "",
+        "key": "Automatic updates not configured",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 46
+        }
+      }
+    ]
+  },
+  "version": 1
+}

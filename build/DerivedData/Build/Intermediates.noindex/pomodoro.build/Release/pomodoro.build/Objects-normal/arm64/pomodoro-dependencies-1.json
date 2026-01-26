@@ -191,441 +191,441 @@
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/Accessibility.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/Accessibility-77FFO1MR58KC085S4TGF77L4P.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/Accessibility-ALSDAR08XVKG8SWC3KLGDRO7G.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Accessibility"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/AppKit.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/AppKit-ANJZWP7U292WP78UQIEDHFHJ5.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/AppKit-9HGP2JUFWU5MMYC4YQ5AQSMJR.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "AppKit"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/ApplicationServices.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/ApplicationServices-CYEEIW2T2SG4IPTFBPO9YSSSC.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/ApplicationServices-7XOWBYUWMYU7DVNZ1OG0J8ZWT.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "ApplicationServices"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/CFNetwork.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/CFNetwork-73SG6N5HYLU99XGXWMDN0H89C.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/CFNetwork-495JVCZMSYM0V144F9WXGBDJ9.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CFNetwork"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/cups.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/CUPS-2POT2N8XCA233B2XRP1TFNITR.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/CUPS-7X04HOJWKXN5EWPG82K11OJG.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CUPS"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/ColorSync.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/ColorSync-5W72CHABG15JN5RRJFJO72CJP.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/ColorSync-3R5A0HUCWZMIRJXS2BGO1JIK8.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "ColorSync"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/CoreData.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/CoreData-7YRZN73VJH33LIPHR5OCOWRFG.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/CoreData-6APBUVLQJY2DTI9C8QRN77PWM.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreData"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/CoreFoundation.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/CoreFoundation-8T51SM3L5AJ42FVXJXB6M85UH.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/CoreFoundation-11ERRP50DQ3LL2PQC13G5H3RL.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreFoundation"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/CoreGraphics.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/CoreGraphics-9BFHVO2FGI1KVX3GQIMT6TL4X.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/CoreGraphics-58Q3SXX2T7XA4DMZTUYBCLZ10.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreGraphics"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/CoreImage.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/CoreImage-ENUDYMHIBDJLJXYUSPQSXM807.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/CoreImage-8ALE6ZL0GI1ZF8ZUZGFKJNO9L.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreImage"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/CoreServices.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/CoreServices-CIWOZW71D4MHA7WABLY1NMO6R.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/CoreServices-7AJ5R6EOA07I21XTXKMQ6YHE.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreServices"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/CoreText.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/CoreText-4YAPGFUZA91RO1A2VSC99YIJ8.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/CoreText-4E8KIKZFW67QOU6RJ23WU185H.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreText"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/CoreTransferable.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/CoreTransferable-54WJ7BWQNV2F7KC6A7CJOOGFI.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/CoreTransferable-1IPDVGC91RXDECBV2HSJKPPFY.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreTransferable"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/CoreVideo.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/CoreVideo-1R15CPUHRPZTZUTACXF8SSUTD.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/CoreVideo-1V0PAU5QZY1KL5V9STW7AIMMX.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreVideo"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/Darwin.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/Darwin-51T0S431RD11Z9JOVAS7ESHMH.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/Darwin-8J8QRHX3BKWLK9GSB6OCVK7OP.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Darwin"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/DataDetection.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/DataDetection-5FEVWHQC32Y0VATJDSU0HBR56.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/DataDetection-8CHHLF2AW9C7W8H286N2RL094.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "DataDetection"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/DeveloperToolsSupport.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/DeveloperToolsSupport-AX2Q62CO5PHCLFDNRP1YIBF24.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/DeveloperToolsSupport-BHEPZXOGISSF7XQX115YWXQLH.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "DeveloperToolsSupport"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/DiskArbitration.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/DiskArbitration-5QB3OWEZGAMUJBPF6MK7NZZ1.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/DiskArbitration-4ZIRNPH229CNVC66CSOXJYR4Y.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "DiskArbitration"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/dispatch.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/Dispatch-28WT0DW0HM17CDXIFHFJFU24R.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/Dispatch-5D8166IECSSPNW836XGH9F1L4.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Dispatch"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/Foundation.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/Foundation-1E9J3ZFUQS3KC5BGSZC7FST1D.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/Foundation-F1COU87WSQ4O7LHQ1QU5RZ26H.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Foundation"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/IOKit.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/IOKit-59MQ4R15JIZHYAYDNWWKSETHS.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/IOKit-E550977P7VRPMWXU1XY9RFH68.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "IOKit"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/IOSurface.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/IOSurface-29KMXG91DRTFKPNJ7QMYHKVA1.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/IOSurface-1N5ITBTO8LUCEZH674TAAU6G.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "IOSurface"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/ImageIO.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/ImageIO-9L9GQ8X9LG525LKJGYMHS49MS.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/ImageIO-1XYQF2N1M23L4MPEGJYWY2E7Z.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "ImageIO"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/DarwinBasic.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/MachO-8ENP6IRO3Q21J7URW13A5MQNL.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/MachO-6TUW1TF1ZM7G7SNRA6KTDZKKQ.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "MachO"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/Metal.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/Metal-B6B69AXAUUP3GF33SNCEVC7Z3.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/Metal-3C6OUMDDR1SPBVKCT3XXT6XON.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Metal"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/OSLog.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/OSLog-6SBRDYU8F8XYPF0ECQE4WNH8W.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/OSLog-3XRNROS27VLKYO6N5UPY822ZP.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "OSLog"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/ObjectiveC.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/ObjectiveC-1528DKW8KG5YFLN4O2AC8GAYP.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/ObjectiveC-1VZGG8SZ9SP3E0Y6687UCE83C.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "ObjectiveC"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/OpenGL.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/OpenGL-64YG0ILOZLWH57LXB18NZ5GBA.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/OpenGL-66E7K3YYMGZJ9G4XRQVUF9MPY.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "OpenGL"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/QuartzCore.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/QuartzCore-99OA1X86ETZBZI31ZZL3DT5NM.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/QuartzCore-DNYXTSSEQMWODZQCRJSE9EPG6.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "QuartzCore"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/Security.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/Security-10DERSAPUNVQPPWN8BNGNTYTN.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/Security-ALCWH5775RID4P86Y94G615XT.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Security"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/Spatial\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/Spatial-8WG9UWMKR82VHW6X4M1XUOV7Q.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/Spatial-2S0S5I2X1S6ZBFTIK1HW8SBSV.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Spatial"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/lib\/swift\/shims\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/SwiftShims-5I2DF92LS7BJAFGW2MVUP8H8Y.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/SwiftShims-3GHFQTH0T6YCLBXICC1FUQ3O5.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "SwiftShims"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/SwiftUI.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/SwiftUI-1SFY3WHRZ2MDBVVBYI1NZJL6H.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/SwiftUI-D98TIA7YDH2BWB7FMQQ81SJ6G.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "SwiftUI"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/SwiftUICore.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/SwiftUICore-41ZBU105N8TZJI0X5QUWA2XWC.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/SwiftUICore-BNL5Z9XFL8EXSWAAWC4LQI9E1.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "SwiftUICore"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/Symbols.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/Symbols-7TQXRTKPKZ6MN2QEHGXSVZPY.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/Symbols-A4JPCFLFIDY18QNZGY9V9W1T2.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Symbols"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/UniformTypeIdentifiers.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/UniformTypeIdentifiers-4WQB802MUD0OO8ELK5XEZG8N9.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/UniformTypeIdentifiers-4N9A6N5DOWLO3Y2FBUQ2RXS4U.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "UniformTypeIdentifiers"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/System\/Library\/Frameworks\/UserNotifications.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/UserNotifications-1KPXKWO83VOT9I60FZ8D2TD2G.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/UserNotifications-DDXY6MIDA12CEUHDE92H34YB6.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "UserNotifications"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/xpc.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/XPC-B5IDPBDN99HL6Y0ZJ7KHFUF30.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/XPC-B3WO05VYS4S25IOP6M0ERK512.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "XPC"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/DarwinFoundation1.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_AvailabilityInternal-2HYVF4RIJGZ6RA4CE0BPW6ACM.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_AvailabilityInternal-3SOXGG38OXQCT2N9WAZOXYN1R.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_AvailabilityInternal"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_Builtin_float-RLEHK3COE4MBC5W7K5IIDIS6.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_Builtin_float-4FIQKK3D7Q2LQ8NYINICQ6BT5.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_float"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_Builtin_intrinsics-2P2ICS9G7Y9NF91Y46EV0V8LO.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_Builtin_intrinsics-3Q028FD8G032KB6PS1MR2E075.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_intrinsics"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_Builtin_inttypes-9SB6WUMP8NBLN0ZK3CZVOUQ1N.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_Builtin_inttypes-3RFEY517YWBH3Y5WQKZ3LWX9W.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_inttypes"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_Builtin_limits-4JFHM1X8L8LC3ZTSO9OEQJKGV.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_Builtin_limits-65FVA6XIV6CO7XH0TRHIW3C3F.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_limits"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_Builtin_stdarg-3Y82POHGMXB99YH2CN09X1OWE.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_Builtin_stdarg-DTLQQAI646414LP3KE3XNZGDL.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_stdarg"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_Builtin_stdatomic-2OH9T5EF9LCUMIF1GS08IYC8I.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_Builtin_stdatomic-AK3J236QCHPDOWF1VGMD8RRXR.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_stdatomic"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_Builtin_stdbool-72P5XYNHNMC2BCCXN41LI9QVV.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_Builtin_stdbool-7Q7AI3I2L59S1K2OYJBTM5ZXX.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_stdbool"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_Builtin_stddef-CTVXIT559085FV1TUS4UT1YYZ.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_Builtin_stddef-20FOMMQ6SLJGGANUFFYRTXJ8M.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_stddef"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_Builtin_stdint-AV4HBRK500MJTDUQGTGGY1WZE.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_Builtin_stdint-DXRMY180DS4IHI3CNA9GN80L9.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_stdint"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_Builtin_tgmath-5KP1Z0S7SAQBPE6IJT5JZ34LL.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_Builtin_tgmath-E2WHAWMHCBGEV6TFMBUZ2H0HO.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_tgmath"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/DarwinFoundation1.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_DarwinFoundation1-853IP829BVEN3FHD7AXMIXJ3X.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_DarwinFoundation1-544CZ8BZG56LQ46NVLZPCN4HD.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_DarwinFoundation1"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/DarwinFoundation2.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_DarwinFoundation2-AU90WGQIIDXBLF2YNGL964V41.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_DarwinFoundation2-DD04DVIWQP5ER1RFUVYMZ0UOX.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_DarwinFoundation2"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/DarwinFoundation3.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_DarwinFoundation3-DJROU5KKQIBE62HC874V3YMCT.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_DarwinFoundation3-6D5HRA0C9JIBHZ2DUAE0ECLA0.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_DarwinFoundation3"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/lib\/swift\/shims\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_SwiftConcurrencyShims-WE3CVBD4WX44XLFUQCT0ZMCY.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/_SwiftConcurrencyShims-5HOBEUD6KYC4QVEY43H2N433M.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_SwiftConcurrencyShims"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/launch.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/launch-CSVFLQBAKTQVN3JNIDBN1ZCJU.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/launch-2TU3WHTXQZOZVRE86H5H2K59B.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "launch"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/libDER\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/libDER-AJN5KVJ9GEQ5I7I0U9JLOF0O0.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/libDER-9CQMYW14II27JWIXVAXNYF0VU.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "libDER"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/libkern.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/libkern-1HC3AMBAT59NTL3192ZZU1KUJ.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/libkern-21A7UEGGCFSPJIGD76NY2M2BR.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "libkern"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/os.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/os-9HWRMBGDCZ88KQB9BYGCD5WUH.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/os-68M2JJTLKZWZZUSU5M52NVV6G.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "os"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/os.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/os_object-70K30SZ80ED7GZLBDIOFVLPHF.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/os_object-F0LXIWDTUDVXRB6QTNI3ACCOR.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "os_object"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/os.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/os_workgroup-4SDEXK8ZQ02THRPP0KY3K5P9W.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/os_workgroup-A4IKWDJU2IVP5SYF2J0AXYB0L.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "os_workgroup"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/ptrauth-CQTY5T4MOVB599IVIQWHB3BD4.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/ptrauth-7KHGZJOZMU2QXABFISZOSOVOZ.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "ptrauth"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/17\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/ptrcheck-75LIOM18W8FW5YVVP47PT1HVW.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/ptrcheck-DXS4T8JJWC59I08VQLQTFQIA1.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "ptrcheck"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/simd\/module.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/simd-55PRK1377WZRM76C3VOK574L.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/simd-B2V9OUV26ZV7CZY7G8A5YXQ7G.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "simd"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/MacOSX.platform\/Developer\/SDKs\/MacOSX.sdk\/usr\/include\/DarwinFoundation2.modulemap",
-    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/sys_types-DEWMVXPBKK842ZZSVY4JDEKYQ.pcm",
+    "clangModulePath" : "\/Users\/erickpatrickbarcelos\/codes\/pomodoro\/build\/DerivedData\/ModuleCache.noindex\/sys_types-1IC217NXRE93NNC5HTRC1CDHF.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "sys_types"

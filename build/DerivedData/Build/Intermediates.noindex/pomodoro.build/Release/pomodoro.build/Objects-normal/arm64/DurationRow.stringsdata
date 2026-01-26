@@ -1,0 +1,32 @@
+{
+  "source": "/Users/erickpatrickbarcelos/codes/pomodoro/pomodoro/Views/DurationRow.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 23
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld %@",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 25
+        }
+      },
+      {
+        "comment": "",
+        "key": "Timer Settings",
+        "location": {
+          "startingColumn": 21,
+          "startingLine": 87
+        }
+      }
+    ]
+  },
+  "version": 1
+}

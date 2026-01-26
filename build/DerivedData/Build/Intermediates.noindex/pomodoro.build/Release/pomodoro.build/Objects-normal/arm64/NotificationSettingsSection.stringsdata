@@ -1,0 +1,80 @@
+{
+  "source": "/Users/erickpatrickbarcelos/codes/pomodoro/pomodoro/Views/NotificationSettingsSection.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Sound Settings",
+        "location": {
+          "startingColumn": 17,
+          "startingLine": 14
+        }
+      },
+      {
+        "comment": "",
+        "key": "Enable Sound",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 15
+        }
+      },
+      {
+        "comment": "",
+        "key": "Silent Mode",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 18
+        }
+      },
+      {
+        "comment": "",
+        "key": "When enabled, notifications will be sent without sound",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 19
+        }
+      },
+      {
+        "comment": "",
+        "key": "Sound Type",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 21
+        }
+      },
+      {
+        "comment": "",
+        "key": "Test Sound",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 27
+        }
+      },
+      {
+        "comment": "",
+        "key": "Notifications will appear when:",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 35
+        }
+      },
+      {
+        "comment": "",
+        "key": "Work session completes",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 40
+        }
+      },
+      {
+        "comment": "",
+        "key": "Break session completes",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 41
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -44,7 +44,7 @@
       },
       {
         "comment": "",
-        "key": "Pomodoro Settings...",
+        "key": "Settings...",
         "location": {
           "startingColumn": 20,
           "startingLine": 38
@@ -52,18 +52,10 @@
       },
       {
         "comment": "",
-        "key": "Notification Settings...",
-        "location": {
-          "startingColumn": 20,
-          "startingLine": 42
-        }
-      },
-      {
-        "comment": "",
         "key": "Quit",
         "location": {
           "startingColumn": 20,
-          "startingLine": 48
+          "startingLine": 45
         }
       }
     ]

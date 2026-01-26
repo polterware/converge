@@ -4,18 +4,26 @@
     "Localizable": [
       {
         "comment": "",
+        "key": "History",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 57
+        }
+      },
+      {
+        "comment": "",
         "key": "No sessions yet",
         "location": {
-          "startingColumn": 22,
-          "startingLine": 26
+          "startingColumn": 34,
+          "startingLine": 34
         }
       },
       {
         "comment": "",
         "key": "Complete a pomodoro session to see it here",
         "location": {
-          "startingColumn": 22,
-          "startingLine": 29
+          "startingColumn": 34,
+          "startingLine": 37
         }
       }
     ]

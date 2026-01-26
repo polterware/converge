@@ -4,10 +4,18 @@
     "Localizable": [
       {
         "comment": "",
+        "key": "Statistics",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 28
+        }
+      },
+      {
+        "comment": "",
         "key": "Productivity (last 14 days)",
         "location": {
           "startingColumn": 18,
-          "startingLine": 34
+          "startingLine": 55
         }
       },
       {
@@ -15,7 +23,7 @@
         "key": "Date",
         "location": {
           "startingColumn": 31,
-          "startingLine": 38
+          "startingLine": 59
         }
       },
       {
@@ -23,7 +31,7 @@
         "key": "Pomodoros",
         "location": {
           "startingColumn": 31,
-          "startingLine": 39
+          "startingLine": 60
         }
       },
       {
@@ -31,7 +39,7 @@
         "key": "%lld",
         "location": {
           "startingColumn": 18,
-          "startingLine": 59
+          "startingLine": 80
         }
       }
     ]

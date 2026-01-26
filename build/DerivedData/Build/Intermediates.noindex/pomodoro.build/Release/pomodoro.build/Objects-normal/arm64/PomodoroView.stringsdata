@@ -7,31 +7,31 @@
         "key": "Completed: %lld",
         "location": {
           "startingColumn": 30,
-          "startingLine": 46
+          "startingLine": 49
         }
       },
       {
         "comment": "",
         "key": "Pause",
         "location": {
-          "startingColumn": 50,
-          "startingLine": 53
+          "startingColumn": 51,
+          "startingLine": 66
         }
       },
       {
         "comment": "",
         "key": "Start",
         "location": {
-          "startingColumn": 60,
-          "startingLine": 53
+          "startingColumn": 61,
+          "startingLine": 66
         }
       },
       {
         "comment": "",
         "key": "Reset",
         "location": {
-          "startingColumn": 32,
-          "startingLine": 66
+          "startingColumn": 35,
+          "startingLine": 81
         }
       }
     ]
