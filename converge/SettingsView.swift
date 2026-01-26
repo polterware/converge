@@ -87,7 +87,7 @@ struct SettingsView: View {
                     Image(systemName: "info.circle")
                         .font(.caption)
                         .foregroundStyle(.secondary)
-                    Text("Choose how the app should appear. Automatic follows your system settings.")
+                    Text("Choose how the app should appear. System follows your system settings.")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
