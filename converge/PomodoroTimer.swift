@@ -21,6 +21,7 @@ final class PomodoroTimer: ObservableObject {
     @Published private(set) var isRunning: Bool = false
     @Published private(set) var phase: PomodoroPhase = .idle
     @Published private(set) var completedPomodoros: Int = 0
+    @Published private(set) var isWaitingForManualStart: Bool = false
     
     private var currentPhaseTotalSeconds: Int = 0
 
@@ -118,6 +119,7 @@ final class PomodoroTimer: ObservableObject {
         remainingSeconds = settings.workDurationSeconds
         currentPhaseTotalSeconds = settings.workDurationSeconds
         completedPomodoros = 0
+        isWaitingForManualStart = false
         syncToWidget()
     }
 
@@ -162,7 +164,22 @@ final class PomodoroTimer: ObservableObject {
             currentPhaseTotalSeconds = settings.workDurationSeconds
         }
         
-        syncToWidget()
+        // Check if auto continue is enabled
+        if settings.autoContinue {
+            // Continue automatically - timer keeps running
+            syncToWidget()
+        } else {
+            // Manual mode - pause and wait for user confirmation
+            pause()
+            isWaitingForManualStart = true
+            syncToWidget()
+        }
+    }
+    
+    func startNextPhase() {
+        guard isWaitingForManualStart else { return }
+        isWaitingForManualStart = false
+        start()
     }
     
     private func syncToWidget() {

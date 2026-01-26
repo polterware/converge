@@ -71,38 +71,72 @@ struct PomodoroView: View {
                         .animation(.easeInOut(duration: 0.3), value: timer.phase)
                     }
 
-                    HStack(spacing: 12) {
-                        Button {
-                            withAnimation(.easeInOut(duration: 0.2)) {
-                                if timer.isRunning {
-                                    timer.pause()
-                                } else {
-                                    timer.start()
+                    if timer.isWaitingForManualStart {
+                        // Manual mode - show button to start next phase
+                        HStack(spacing: 12) {
+                            Button {
+                                withAnimation(.easeInOut(duration: 0.2)) {
+                                    timer.startNextPhase()
                                 }
-                            }
-                        } label: {
-                            Label(
-                                timer.isRunning ? "Pause" : "Start",
-                                systemImage: timer.isRunning ? "pause.fill" : "play.fill"
-                            )
-                            .labelStyle(.titleAndIcon)
-                            .contentShape(Rectangle())
-                        }
-                        .buttonStyle(RoundedBorderedProminentButtonStyle(color: phaseColors.accent))
-                        .animation(.easeInOut(duration: 0.3), value: timer.phase)
-                        .animation(.easeInOut(duration: 0.3), value: timer.isRunning)
-
-                        Button {
-                            withAnimation(.easeInOut(duration: 0.2)) {
-                                timer.reset()
-                            }
-                        } label: {
-                            Label("Reset", systemImage: "arrow.counterclockwise")
+                            } label: {
+                                Label(
+                                    nextPhaseButtonLabel,
+                                    systemImage: nextPhaseButtonIcon
+                                )
                                 .labelStyle(.titleAndIcon)
+                                .contentShape(Rectangle())
+                            }
+                            .buttonStyle(RoundedBorderedProminentButtonStyle(color: phaseColors.accent))
+                            .animation(.easeInOut(duration: 0.3), value: timer.phase)
+                            .animation(.easeInOut(duration: 0.3), value: timer.isWaitingForManualStart)
+
+                            Button {
+                                withAnimation(.easeInOut(duration: 0.2)) {
+                                    timer.reset()
+                                }
+                            } label: {
+                                Label("Reset", systemImage: "arrow.counterclockwise")
+                                    .labelStyle(.titleAndIcon)
+                            }
+                            .buttonStyle(RoundedBorderedButtonStyle(color: phaseColors.primary))
+                            .animation(.easeInOut(duration: 0.3), value: timer.phase)
+                            .animation(.easeInOut(duration: 0.3), value: timer.isWaitingForManualStart)
                         }
-                        .buttonStyle(RoundedBorderedButtonStyle(color: phaseColors.primary))
-                        .animation(.easeInOut(duration: 0.3), value: timer.phase)
-                        .animation(.easeInOut(duration: 0.3), value: timer.isRunning)
+                    } else {
+                        // Normal mode - show Start/Pause and Reset buttons
+                        HStack(spacing: 12) {
+                            Button {
+                                withAnimation(.easeInOut(duration: 0.2)) {
+                                    if timer.isRunning {
+                                        timer.pause()
+                                    } else {
+                                        timer.start()
+                                    }
+                                }
+                            } label: {
+                                Label(
+                                    timer.isRunning ? "Pause" : "Start",
+                                    systemImage: timer.isRunning ? "pause.fill" : "play.fill"
+                                )
+                                .labelStyle(.titleAndIcon)
+                                .contentShape(Rectangle())
+                            }
+                            .buttonStyle(RoundedBorderedProminentButtonStyle(color: phaseColors.accent))
+                            .animation(.easeInOut(duration: 0.3), value: timer.phase)
+                            .animation(.easeInOut(duration: 0.3), value: timer.isRunning)
+
+                            Button {
+                                withAnimation(.easeInOut(duration: 0.2)) {
+                                    timer.reset()
+                                }
+                            } label: {
+                                Label("Reset", systemImage: "arrow.counterclockwise")
+                                    .labelStyle(.titleAndIcon)
+                            }
+                            .buttonStyle(RoundedBorderedButtonStyle(color: phaseColors.primary))
+                            .animation(.easeInOut(duration: 0.3), value: timer.phase)
+                            .animation(.easeInOut(duration: 0.3), value: timer.isRunning)
+                        }
                     }
                 }
                 .padding(32)
@@ -140,6 +174,28 @@ struct PomodoroView: View {
     
     private var phaseColors: PhaseColors {
         PhaseColors.color(for: timer.phase, colorScheme: effectiveColorScheme, isRunning: timer.isRunning)
+    }
+    
+    private var nextPhaseButtonLabel: String {
+        switch timer.phase {
+        case .break:
+            return "Start Break"
+        case .work:
+            return "Start Pomodoro"
+        case .idle:
+            return "Start"
+        }
+    }
+    
+    private var nextPhaseButtonIcon: String {
+        switch timer.phase {
+        case .break:
+            return "cup.and.saucer.fill"
+        case .work:
+            return "brain.head.profile"
+        case .idle:
+            return "play.fill"
+        }
     }
 }
 

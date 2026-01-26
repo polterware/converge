@@ -33,12 +33,19 @@ final class PomodoroSettings: ObservableObject {
         }
     }
     
+    @Published var autoContinue: Bool {
+        didSet {
+            save()
+        }
+    }
+    
     // MARK: - UserDefaults Keys
     private enum Keys {
         static let workDurationMinutes = "workDurationMinutes"
         static let shortBreakDurationMinutes = "shortBreakDurationMinutes"
         static let longBreakDurationMinutes = "longBreakDurationMinutes"
         static let pomodorosUntilLongBreak = "pomodorosUntilLongBreak"
+        static let autoContinue = "autoContinue"
     }
     
     // MARK: - Default Values
@@ -46,6 +53,7 @@ final class PomodoroSettings: ObservableObject {
     private static let defaultShortBreakDurationMinutes = 5
     private static let defaultLongBreakDurationMinutes = 15
     private static let defaultPomodorosUntilLongBreak = 4
+    private static let defaultAutoContinue = true
     
     // MARK: - Initialization
     init() {
@@ -62,6 +70,13 @@ final class PomodoroSettings: ObservableObject {
         
         let pomodorosUntilLongBreak = defaults.integer(forKey: Keys.pomodorosUntilLongBreak)
         self.pomodorosUntilLongBreak = pomodorosUntilLongBreak == 0 ? Self.defaultPomodorosUntilLongBreak : pomodorosUntilLongBreak
+        
+        // For boolean, check if key exists, otherwise use default
+        if defaults.object(forKey: Keys.autoContinue) != nil {
+            self.autoContinue = defaults.bool(forKey: Keys.autoContinue)
+        } else {
+            self.autoContinue = Self.defaultAutoContinue
+        }
     }
     
     // MARK: - Persistence
@@ -71,6 +86,7 @@ final class PomodoroSettings: ObservableObject {
         defaults.set(shortBreakDurationMinutes, forKey: Keys.shortBreakDurationMinutes)
         defaults.set(longBreakDurationMinutes, forKey: Keys.longBreakDurationMinutes)
         defaults.set(pomodorosUntilLongBreak, forKey: Keys.pomodorosUntilLongBreak)
+        defaults.set(autoContinue, forKey: Keys.autoContinue)
     }
     
     func resetToDefaults() {
@@ -78,6 +94,7 @@ final class PomodoroSettings: ObservableObject {
         shortBreakDurationMinutes = Self.defaultShortBreakDurationMinutes
         longBreakDurationMinutes = Self.defaultLongBreakDurationMinutes
         pomodorosUntilLongBreak = Self.defaultPomodorosUntilLongBreak
+        autoContinue = Self.defaultAutoContinue
     }
     
     // MARK: - Computed Properties
