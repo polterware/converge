@@ -24,7 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2CDD9D0A2F26D9980013D3FD /* pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CDD9D0A2F26D9980013D3FD /* converge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = converge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CDD9D192F26D9990013D3FD /* pomodoroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pomodoroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CDD9D232F26D9990013D3FD /* pomodoroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pomodoroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -85,7 +85,7 @@
 		2CDD9D0B2F26D9980013D3FD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2CDD9D0A2F26D9980013D3FD /* pomodoro.app */,
+				2CDD9D0A2F26D9980013D3FD /* converge.app */,
 				2CDD9D192F26D9990013D3FD /* pomodoroTests.xctest */,
 				2CDD9D232F26D9990013D3FD /* pomodoroUITests.xctest */,
 			);
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2CDD9D092F26D9980013D3FD /* pomodoro */ = {
+		2CDD9D092F26D9980013D3FD /* converge */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2CDD9D2D2F26D9990013D3FD /* Build configuration list for PBXNativeTarget "pomodoro" */;
+			buildConfigurationList = 2CDD9D2D2F26D9990013D3FD /* Build configuration list for PBXNativeTarget "converge" */;
 			buildPhases = (
 				2CDD9D062F26D9980013D3FD /* Sources */,
 				2CDD9D072F26D9980013D3FD /* Frameworks */,
@@ -110,11 +110,11 @@
 			fileSystemSynchronizedGroups = (
 				2CDD9D0C2F26D9980013D3FD /* pomodoro */,
 			);
-			name = pomodoro;
+			name = converge;
 			packageProductDependencies = (
 			);
 			productName = pomodoro;
-			productReference = 2CDD9D0A2F26D9980013D3FD /* pomodoro.app */;
+			productReference = 2CDD9D0A2F26D9980013D3FD /* converge.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2CDD9D182F26D9990013D3FD /* pomodoroTests */ = {
@@ -203,7 +203,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2CDD9D092F26D9980013D3FD /* pomodoro */,
+				2CDD9D092F26D9980013D3FD /* converge */,
 				2CDD9D182F26D9990013D3FD /* pomodoroTests */,
 				2CDD9D222F26D9990013D3FD /* pomodoroUITests */,
 			);
@@ -261,12 +261,12 @@
 /* Begin PBXTargetDependency section */
 		2CDD9D1B2F26D9990013D3FD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2CDD9D092F26D9980013D3FD /* pomodoro */;
+			target = 2CDD9D092F26D9980013D3FD /* converge */;
 			targetProxy = 2CDD9D1A2F26D9990013D3FD /* PBXContainerItemProxy */;
 		};
 		2CDD9D252F26D9990013D3FD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2CDD9D092F26D9980013D3FD /* pomodoro */;
+			target = 2CDD9D092F26D9980013D3FD /* converge */;
 			targetProxy = 2CDD9D242F26D9990013D3FD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -406,13 +406,15 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Converge;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = polterware.pomodoro;
+				PRODUCT_BUNDLE_IDENTIFIER = polterware.converge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -438,13 +440,15 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Converge;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = polterware.pomodoro;
+				PRODUCT_BUNDLE_IDENTIFIER = polterware.converge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -548,7 +552,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2CDD9D2D2F26D9990013D3FD /* Build configuration list for PBXNativeTarget "pomodoro" */ = {
+		2CDD9D2D2F26D9990013D3FD /* Build configuration list for PBXNativeTarget "converge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CDD9D2E2F26D9990013D3FD /* Debug */,
