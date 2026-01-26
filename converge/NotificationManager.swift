@@ -5,6 +5,7 @@
 
 import Foundation
 import UserNotifications
+import AppKit
 
 @MainActor
 final class NotificationManager {
@@ -12,11 +13,16 @@ final class NotificationManager {
     
     private let settings = NotificationSettings.shared
     private let notificationCenter = UNUserNotificationCenter.current()
-    private let notificationDelegate = NotificationDelegate()
+    private lazy var notificationDelegate: NotificationDelegate = {
+        let delegate = NotificationDelegate(notificationManager: self)
+        notificationCenter.delegate = delegate
+        return delegate
+    }()
     
     private init() {
-        // Configure delegate to always show notifications, even when window is active
-        notificationCenter.delegate = notificationDelegate
+        // Configure delegate to always show notifications, even when app window is active
+        // Access lazy property to trigger initialization
+        _ = notificationDelegate
     }
     
     func requestAuthorization() async {
@@ -46,13 +52,27 @@ final class NotificationManager {
     }
     
     private func getNotificationSound() -> UNNotificationSound? {
+        // Return nil to prevent system from playing default sound
+        // We play the selected sound manually in the delegate
+        return nil
+    }
+    
+    func playSelectedSound() {
         guard settings.shouldPlaySound else {
-            return nil
+            return
         }
         
-        // UserNotifications framework has limited system sound support
-        // Use default sound for all cases as custom sounds require sound files
-        return .default
+        if let soundName = settings.soundType.systemSoundName {
+            if let sound = NSSound(named: soundName) {
+                sound.play()
+            } else {
+                // Fallback to beep if sound not found
+                NSSound.beep()
+            }
+        } else {
+            // Default sound - use beep
+            NSSound.beep()
+        }
     }
     
     private func sendNotification(content: UNMutableNotificationContent) {
@@ -72,12 +92,24 @@ final class NotificationManager {
 
 // Delegate to force notifications to always be presented, even when app window is active
 private class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
+    weak var notificationManager: NotificationManager?
+    
+    init(notificationManager: NotificationManager) {
+        self.notificationManager = notificationManager
+    }
+    
     func userNotificationCenter(
         _ center: UNUserNotificationCenter,
         willPresent notification: UNNotification,
         withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
     ) {
+        // Play the selected system sound
+        Task { @MainActor in
+            notificationManager?.playSelectedSound()
+        }
+        
         // Always present notification as banner, even when app is in foreground
-        completionHandler([.banner, .sound, .badge])
+        // Note: We don't include .sound here since we're playing the sound manually
+        completionHandler([.banner, .badge])
     }
 }

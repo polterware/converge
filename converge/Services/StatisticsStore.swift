@@ -36,6 +36,11 @@ final class StatisticsStore: ObservableObject {
         sessions.append(session)
     }
 
+    func clearAll() {
+        sessions = []
+        UserDefaults.standard.removeObject(forKey: Self.userDefaultsKey)
+    }
+
     func pomodoroCount(day: Date) -> Int {
         sessions.filter { calendar.isDate($0.completedAt, inSameDayAs: day) }.count
     }

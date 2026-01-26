@@ -8,8 +8,10 @@ import SwiftUI
 struct SettingsView: View {
     @EnvironmentObject private var settings: PomodoroSettings
     @EnvironmentObject private var themeSettings: ThemeSettings
+    @EnvironmentObject private var store: StatisticsStore
     
     @State private var showResetFeedback = false
+    @State private var showClearConfirmation = false
     
     var body: some View {
         Form {
@@ -85,19 +87,42 @@ struct SettingsView: View {
             NotificationSettingsSection()
 
             Section {
-                Button {
-                    resetToDefaults()
-                } label: {
-                    HStack {
-                        Image(systemName: "arrow.counterclockwise")
-                        Text("Reset to Defaults")
+                HStack(spacing: 12) {
+                    Button {
+                        resetToDefaults()
+                    } label: {
+                        HStack {
+                            Image(systemName: "arrow.counterclockwise")
+                            Text("Reset to Defaults")
+                        }
+                        .frame(maxWidth: .infinity)
                     }
+                    .foregroundStyle(.red)
+                    
+                    Button {
+                        showClearConfirmation = true
+                    } label: {
+                        HStack {
+                            Image(systemName: "trash")
+                            Text("Clear History")
+                        }
+                        .frame(maxWidth: .infinity)
+                    }
+                    .foregroundStyle(.red)
+                    .disabled(store.recentSessions(limit: 1).isEmpty)
                 }
-                .foregroundStyle(.red)
             }
         }
         .formStyle(.grouped)
         .navigationTitle("Settings")
+        .alert("Clear History", isPresented: $showClearConfirmation) {
+            Button("Cancel", role: .cancel) { }
+            Button("Clear", role: .destructive) {
+                store.clearAll()
+            }
+        } message: {
+            Text("This will permanently delete all session history and statistics. This action cannot be undone.")
+        }
         .overlay {
             VStack(spacing: 8) {
                 SaveFeedbackView(
