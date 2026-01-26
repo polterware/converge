@@ -7,6 +7,7 @@ import SwiftUI
 
 struct SessionHistoryView: View {
     @EnvironmentObject private var store: StatisticsStore
+    @EnvironmentObject private var timer: PomodoroTimer
     @EnvironmentObject private var themeSettings: ThemeSettings
     @Environment(\.colorScheme) private var systemColorScheme
 
@@ -22,22 +23,30 @@ struct SessionHistoryView: View {
 
         NavigationStack {
             ZStack {
-                PhaseColors.color(for: .idle, colorScheme: effectiveColorScheme).background
+                phaseColors.background
                     .ignoresSafeArea()
+                    .animation(.easeInOut(duration: 0.5), value: timer.phase)
+                    .animation(.easeInOut(duration: 0.5), value: timer.isRunning)
                 
                 Group {
                     if sessions.isEmpty {
                         VStack(spacing: 16) {
                             Image(systemName: "clock.badge.questionmark")
                                 .font(.system(size: 48))
-                                .foregroundStyle(.secondary)
+                                .foregroundColor(phaseColors.secondary.opacity(0.7))
+                                .animation(.easeInOut(duration: 0.3), value: timer.phase)
+                                .animation(.easeInOut(duration: 0.3), value: timer.isRunning)
                             Text("No sessions yet")
                                 .font(.headline)
-                                .foregroundStyle(.primary)
+                                .foregroundColor(phaseColors.primary)
+                                .animation(.easeInOut(duration: 0.3), value: timer.phase)
+                                .animation(.easeInOut(duration: 0.3), value: timer.isRunning)
                             Text("Complete a pomodoro session to see it here")
                                 .font(.subheadline)
-                                .foregroundStyle(.secondary)
+                                .foregroundColor(phaseColors.secondary.opacity(0.7))
                                 .multilineTextAlignment(.center)
+                                .animation(.easeInOut(duration: 0.3), value: timer.phase)
+                                .animation(.easeInOut(duration: 0.3), value: timer.isRunning)
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                     } else {
@@ -45,12 +54,17 @@ struct SessionHistoryView: View {
                             ForEach(sessions) { session in
                                 HStack {
                                     Text(Self.dateFormatter.string(from: session.completedAt))
+                                        .foregroundColor(phaseColors.primary)
                                     Spacer()
                                     Text(durationLabel(session.durationSeconds))
-                                        .foregroundStyle(.secondary)
+                                        .foregroundColor(phaseColors.secondary.opacity(0.7))
                                 }
+                                .listRowBackground(Color.clear)
                             }
                         }
+                        .scrollContentBackground(.hidden)
+                        .animation(.easeInOut(duration: 0.3), value: timer.phase)
+                        .animation(.easeInOut(duration: 0.3), value: timer.isRunning)
                     }
                 }
             }
@@ -69,6 +83,10 @@ struct SessionHistoryView: View {
     private var effectiveColorScheme: ColorScheme {
         themeSettings.currentColorScheme ?? systemColorScheme
     }
+    
+    private var phaseColors: PhaseColors {
+        PhaseColors.color(for: timer.phase, colorScheme: effectiveColorScheme, isRunning: timer.isRunning)
+    }
 
     private func durationLabel(_ seconds: Int) -> String {
         let minutes = seconds / 60
@@ -81,6 +99,7 @@ struct SessionHistoryView: View {
     let settings = PomodoroSettings()
     SessionHistoryView()
         .environmentObject(StatisticsStore.shared)
+        .environmentObject(PomodoroTimer(settings: settings))
         .environmentObject(settings)
         .environmentObject(ThemeSettings())
 }
