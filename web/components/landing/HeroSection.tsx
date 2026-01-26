@@ -4,18 +4,48 @@ import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { VantaTrunkBackground } from "./VantaTrunkBackground";
 
-const downloadUrl = process.env.NEXT_PUBLIC_DMG_DOWNLOAD_URL;
+interface ReleaseInfo {
+  url: string;
+  version?: string;
+  source?: string;
+}
 
 export function HeroSection() {
   const [chaos, setChaos] = useState(1.5);
+  const [downloadUrl, setDownloadUrl] = useState<string | null>(
+    process.env.NEXT_PUBLIC_DMG_DOWNLOAD_URL || null
+  );
+
+  useEffect(() => {
+    // Se já tem URL configurada, não precisa buscar
+    if (process.env.NEXT_PUBLIC_DMG_DOWNLOAD_URL) {
+      return;
+    }
+
+    // Buscar versão mais recente da API
+    fetch("/api/releases?type=latest")
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        throw new Error("Failed to fetch release");
+      })
+      .then((data: ReleaseInfo) => {
+        setDownloadUrl(data.url);
+      })
+      .catch((error) => {
+        console.error("Error fetching latest release:", error);
+        // Manter estado atual (sem URL = botão desabilitado)
+      });
+  }, []);
 
   return (
     <section
       className={cn(
-        "relative flex min-h-[100svh] flex-col items-center justify-center gap-6 overflow-hidden px-4 py-16 text-center",
+        "relative flex min-h-svh flex-col items-center justify-center gap-6 overflow-hidden px-4 py-16 text-center",
         "sm:gap-8 sm:py-24 md:py-32"
       )}
     >

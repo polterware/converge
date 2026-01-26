@@ -2,7 +2,7 @@
 set -e
 
 # Script completo de release
-# Uso: ./scripts/release.sh [patch|minor|major] [--skip-version] [--skip-git]
+# Uso: ./scripts/release.sh [patch|minor|major] [--skip-version] [--skip-git] [--upload-github] [--upload-supabase]
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
@@ -10,6 +10,8 @@ PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 INCREMENT_TYPE="${1:-patch}"
 SKIP_VERSION=false
 SKIP_GIT=false
+UPLOAD_GITHUB=false
+UPLOAD_SUPABASE=false
 
 # Parse arguments
 for arg in "$@"; do
@@ -19,6 +21,12 @@ for arg in "$@"; do
             ;;
         --skip-git)
             SKIP_GIT=true
+            ;;
+        --upload-github)
+            UPLOAD_GITHUB=true
+            ;;
+        --upload-supabase)
+            UPLOAD_SUPABASE=true
             ;;
     esac
 done
@@ -91,6 +99,34 @@ if [[ "$SKIP_GIT" == false ]] && command -v git &> /dev/null; then
     fi
 else
     echo "==> Skipping git operations"
+fi
+
+# 5. Upload automático (se solicitado)
+if [[ "$UPLOAD_GITHUB" == true ]]; then
+    echo ""
+    echo "==> Uploading to GitHub Releases..."
+    if [[ -f "$SCRIPT_DIR/upload-to-github.sh" ]]; then
+        "$SCRIPT_DIR/upload-to-github.sh" "$DMG_PATH"
+    else
+        echo "Error: upload-to-github.sh not found"
+        exit 1
+    fi
+fi
+
+if [[ "$UPLOAD_SUPABASE" == true ]]; then
+    echo ""
+    echo "==> Uploading to Supabase Storage..."
+    if [[ -f "$SCRIPT_DIR/upload-to-supabase.sh" ]]; then
+        APPCAST_PATH="$PROJECT_ROOT/releases/appcast.xml"
+        if [[ -f "$APPCAST_PATH" ]]; then
+            "$SCRIPT_DIR/upload-to-supabase.sh" "$DMG_PATH" "$APPCAST_PATH"
+        else
+            "$SCRIPT_DIR/upload-to-supabase.sh" "$DMG_PATH"
+        fi
+    else
+        echo "Error: upload-to-supabase.sh not found"
+        exit 1
+    fi
 fi
 
 echo ""
