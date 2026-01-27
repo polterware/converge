@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>Converge</title>
+        <link>https://github.com/rckbrcls/converge</link>
+        <description>Converge - Pomodoro Timer for macOS</description>
+        <language>en</language>
+        <!-- 
+            Este é um template. O appcast.xml será gerado automaticamente
+            pelo script generate-appcast.sh quando você criar uma release.
+            
+            Para gerar manualmente:
+            ./scripts/generate-appcast.sh <versão> <dmg_path> <release_notes>
+        -->
+    </channel>
+</rss>

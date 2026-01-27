@@ -13,9 +13,15 @@ Converge is a native Pomodoro app for macOS built with SwiftUI. Focused on produ
 - **macOS Widget**: Desktop widget to track the timer without opening the app
 - **Notifications**: Alerts and sounds at the end of each phase
 - **Themes**: Light, dark, or follow system appearance
-- **Automatic Updates**: Stay up to date with automatic updates
+- **Automatic Updates**: Stay up to date with automatic updates using Sparkle
 
 ## Installation
+
+### Download from Website
+
+Visit the [download page](https://your-vercel-app.vercel.app) to download the latest version.
+
+### Manual Installation
 
 1. Download the DMG file from [GitHub Releases](https://github.com/rckbrcls/converge/releases)
 2. Open the downloaded DMG file
@@ -27,6 +33,32 @@ Converge is a native Pomodoro app for macOS built with SwiftUI. Focused on produ
 ## Requirements
 
 - macOS 11.0 or higher
+
+## Automatic Updates
+
+Converge uses Sparkle for automatic updates. The app will check for updates daily and notify you when a new version is available. You can also manually check for updates in Settings → Updates.
+
+## Development
+
+### Setting Up for Releases
+
+1. **Generate EdDSA Keys** (first time only):
+   ```bash
+   ./scripts/generate-keys.sh
+   # or
+   python3 scripts/generate-keys-python.py
+   ```
+
+2. **Add Public Key to Project**:
+   - Copy the public key from the script output
+   - Add it to `converge.xcodeproj/project.pbxproj` as `INFOPLIST_KEY_SUPublicEDKey`
+
+3. **Create a Release**:
+   ```bash
+   ./scripts/generate-release.sh <version> [release_notes_file]
+   ```
+
+See [docs/RELEASE.md](docs/RELEASE.md) for detailed release instructions.
 
 ## Open Source
 
@@ -53,3 +85,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **GitHub**: [https://github.com/rckbrcls/converge](https://github.com/rckbrcls/converge)
 - **Issues**: [https://github.com/rckbrcls/converge/issues](https://github.com/rckbrcls/converge/issues)
+- **Download Page**: [Web Download](web/download.html)

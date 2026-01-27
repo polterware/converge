@@ -22,7 +22,7 @@ struct StatisticsView: View {
                     .ignoresSafeArea()
                     .animation(.easeInOut(duration: 0.5), value: timer.phase)
                     .animation(.easeInOut(duration: 0.5), value: timer.isRunning)
-                
+
                 ScrollView {
                     VStack(alignment: .leading, spacing: 24) {
                         countersSection
@@ -42,11 +42,11 @@ struct StatisticsView: View {
             }
         }
     }
-    
+
     private var effectiveColorScheme: ColorScheme {
         themeSettings.currentColorScheme ?? systemColorScheme
     }
-    
+
     private var phaseColors: PhaseColors {
         PhaseColors.color(for: timer.phase, colorScheme: effectiveColorScheme, isRunning: timer.isRunning)
     }
@@ -67,15 +67,15 @@ struct StatisticsView: View {
         let selectedPoint = chartData.first { point in
             Calendar.current.isDate(point.date, inSameDayAs: selectedDate ?? Date.distantPast)
         }
-        
+
         let monthFormatter: DateFormatter = {
             let formatter = DateFormatter()
             formatter.dateFormat = "MMMM yyyy"
             return formatter
         }()
-        
+
         let currentMonth = chartData.last?.date ?? Date()
-        
+
         return VStack(alignment: .leading, spacing: 12) {
             VStack(alignment: .leading, spacing: 4) {
                 Text(monthFormatter.string(from: currentMonth))
@@ -99,10 +99,10 @@ struct StatisticsView: View {
                         let calculatedWidth = spacePerBar * 0.6
                         return max(8, min(calculatedWidth, 40))
                     }()
-                    
+
                     Chart(chartData) { point in
                         BarMark(
-                            x: .value("Date", point.date),
+                            x: .value("Date", point.date, unit: .day),
                             y: .value("Pomodoros", point.count),
                             width: .fixed(barWidth)
                         )
@@ -111,10 +111,10 @@ struct StatisticsView: View {
                     .frame(height: 200)
                     .chartXSelection(value: $selectedDate)
                     .chartXAxis {
-                        AxisMarks(values: chartData.map { $0.date }) { value in
+                        AxisMarks(values: .stride(by: .day)) { _ in
                             AxisGridLine()
                                 .foregroundStyle(phaseColors.secondary.opacity(0.3))
-                            AxisValueLabel(format: .dateTime.day())
+                            AxisValueLabel(format: .dateTime.day(), centered: true)
                                 .foregroundStyle(phaseColors.secondary)
                         }
                     }
@@ -134,25 +134,25 @@ struct StatisticsView: View {
                         case .active(let location):
                             mouseLocation = location
                             isHovering = true
-                            
+
                             // Mapear posição X do mouse para a data correspondente
                             if !chartData.isEmpty {
                                 let chartWidth = geometry.size.width
                                 let relativeX = max(0, min(0.9999, location.x / chartWidth))
-                                
+
                                 // Dividir o espaço em segmentos iguais para cada barra
                                 // Cada barra ocupa 1/n do espaço total
                                 let segmentWidth = 1.0 / Double(chartData.count)
-                                
+
                                 // Calcular índice baseado em qual segmento o mouse está
                                 var index = Int(relativeX / segmentWidth)
-                                
+
                                 // Garantir que o índice está no range válido (0 até count-1)
                                 // Se o cálculo resultar em count ou maior, usar a última barra
                                 if index >= chartData.count {
                                     index = chartData.count - 1
                                 }
-                                
+
                                 selectedDate = chartData[index].date
                             }
                         case .ended:
@@ -161,18 +161,18 @@ struct StatisticsView: View {
                             selectedDate = nil
                         }
                     }
-                    
+
                     if let selectedPoint = selectedPoint, let mouseLocation = mouseLocation, isHovering {
                         let tooltipWidth: CGFloat = 120
                         let tooltipHeight: CGFloat = 80
                         let offsetX: CGFloat = 16
                         let offsetY: CGFloat = -16
-                        
+
                         // Calcular posição absoluta do tooltip garantindo que não saia dos limites
                         let tooltipX: CGFloat = {
                             let preferredX = mouseLocation.x + offsetX
                             let rightEdge = preferredX + tooltipWidth / 2
-                            
+
                             if rightEdge > geometry.size.width {
                                 // Se sairia pela direita, colocar à esquerda do mouse
                                 return mouseLocation.x - tooltipWidth / 2 - offsetX
@@ -183,11 +183,11 @@ struct StatisticsView: View {
                                 return preferredX
                             }
                         }()
-                        
+
                         let tooltipY: CGFloat = {
                             let preferredY = mouseLocation.y + offsetY
                             let bottomEdge = preferredY + tooltipHeight / 2
-                            
+
                             if bottomEdge > geometry.size.height {
                                 // Se sairia por baixo, colocar acima do mouse
                                 return mouseLocation.y - tooltipHeight / 2 - offsetY
@@ -198,7 +198,7 @@ struct StatisticsView: View {
                                 return preferredY
                             }
                         }()
-                        
+
                         TooltipView(
                             count: selectedPoint.count,
                             date: selectedPoint.date,
@@ -241,14 +241,14 @@ private struct TooltipView: View {
     let count: Int
     let date: Date
     let phaseColors: PhaseColors
-    
+
     private var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .none
         return formatter
     }
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text("\(count)")
