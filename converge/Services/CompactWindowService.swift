@@ -28,4 +28,9 @@ enum CompactWindowService {
             window.animator().setFrame(newFrame, display: true)
         }
     }
+    /// Maximizes the window (zoom) without entering native full screen.
+    static func performZoom() {
+        guard let window = NSApp.keyWindow ?? NSApp.mainWindow else { return }
+        window.zoom(nil)
+    }
 }

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>Converge</title>
+        <link>https://github.com/rckbrcls/converge</link>
+        <description>Converge - Pomodoro Timer for macOS</description>
+        <language>en</language>
+        <item>
+            <title>Version 1.0.0</title>
+            <pubDate>Wed, 28 Jan 2026 22:48:53 +0000</pubDate>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <enclosure 
+                url="https://github.com/rckbrcls/converge/releases/download/v1.0.0/Converge-1.0.0.dmg"
+                sparkle:version="1.0.0"
+                sparkle:shortVersionString="1.0.0"
+                length="817223"
+                type="application/octet-stream"
+                sparkle:edSignature="xi7pE/MvB07Py0E51Nt72AAVrTcxfNIsoRlND8AfqxuzbUm9IhOBBlzd9FD9T11rNMqa7ZhJxN5eiyfw4UvDAA=="
+            />
+            <description><![CDATA[
+# Converge v1.0
+
+## First Public Release
+
+Converge is a native Pomodoro app for macOS, focused on productivity and simplicity.
+
+## Key Features
+
+### Pomodoro Timer
+- Configurable work and break cycles
+- Automatic or manual mode
+- Support for short and long breaks
+- Visual progress indicator
+
+### Statistics and History
+- Track your productivity with daily, weekly, and monthly counters
+- Complete history of all completed sessions
+- Progress and trends visualization
+
+### Interface and Experience
+- macOS menu bar integration - timer always visible
+- Desktop widget - track the timer without opening the app
+- Theme support: light, dark, or follow system appearance
+- Modern and intuitive interface built with SwiftUI
+
+### Notifications
+- Alerts and sounds at the end of each phase
+- Customizable notification settings
+- Integration with macOS notification system
+
+### Automatic Updates
+- Automatic update system using Sparkle
+- Daily update checks
+- Notifications when new versions are available
+
+## Requirements
+
+- macOS 11.0 or higher
+
+## Installation
+
+1. Download the DMG file from the [releases page](https://github.com/rckbrcls/converge/releases)
+2. Open the downloaded DMG file
+3. Drag the Converge app to the Applications folder
+4. Run the app for the first time
+
+**Note**: If the app shows security warnings, right-click on the app and select "Open".
+
+## What's Next
+
+This is just the beginning! We're working on continuous improvements and new features. Your feedback is very important to us.
+
+## Thank You
+
+Thank you for using Converge! We hope it helps you stay focused and increase your productivity.
+
+---
+
+**Useful Links:**
+- [GitHub](https://github.com/rckbrcls/converge)
+- [Report Issues](https://github.com/rckbrcls/converge/issues)
+- [Contribute](https://github.com/rckbrcls/converge)
+            ]]></description>
+        </item>
+    </channel>
+</rss>

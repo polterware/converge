@@ -34,7 +34,7 @@ No target **PomodoroWidget**, verifique/configure:
 
 - **Deployment Target**: macOS 11.0 ou superior (para suporte a WidgetKit)
 - **Product Bundle Identifier**: `polterware.pomodoro.PomodoroWidget`
-- **Development Team**: Mesmo do app principal (`VCF3DS6BTV`)
+- **Development Team**: Configure conforme necessário
 
 ### 4. Adicionar Arquivos ao Target
 

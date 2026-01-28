@@ -409,6 +409,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Converge;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_SUFeedURL = "https://github.com/rckbrcls/converge/releases/latest/download/appcast.xml";
+				INFOPLIST_KEY_SUPublicEDKey = "c3jKYVWrrjNacKjLqspxj/rlbVeDt13eC+lH4Cc5inU=";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -443,6 +445,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Converge;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_SUFeedURL = "https://github.com/rckbrcls/converge/releases/latest/download/appcast.xml";
+				INFOPLIST_KEY_SUPublicEDKey = "c3jKYVWrrjNacKjLqspxj/rlbVeDt13eC+lH4Cc5inU=";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

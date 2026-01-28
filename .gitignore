@@ -10,3 +10,8 @@ keys/eddsa_private_key.pem
 
 # Releases (appcast pode ser commitado, mas DMGs não)
 releases/*.dmg
+releases/*.xcarchive
+releases/DerivedData
+
+# Release scripts and documentation (sensitive information)
+release/
