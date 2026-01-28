@@ -17,15 +17,31 @@ Converge is a native Pomodoro app for macOS built with SwiftUI. Focused on produ
 
 ## Installation
 
-### Download from Website
+### Homebrew (Recommended)
 
-Visit the [download page](https://your-vercel-app.vercel.app) to download the latest version.
+The easiest way to install Converge is via Homebrew Cask:
+
+```bash
+brew install --cask converge
+```
+
+To update to the latest version:
+
+```bash
+brew upgrade --cask converge
+```
+
+**Note**: If you're using a custom Homebrew tap, you may need to add it first:
+```bash
+brew tap rckbrcls/converge
+brew install --cask converge
+```
 
 ### Manual Installation
 
-1. Download the DMG file from [GitHub Releases](https://github.com/rckbrcls/converge/releases)
-2. Open the downloaded DMG file
-3. Drag the Converge app to the Applications folder
+1. Download the ZIP file from [GitHub Releases](https://github.com/rckbrcls/converge/releases)
+2. Extract the ZIP file
+3. Move `Converge.app` to your Applications folder
 4. Run the app for the first time
 
 **Note**: If the app shows security warnings, right-click on the app and select "Open".
@@ -34,9 +50,19 @@ Visit the [download page](https://your-vercel-app.vercel.app) to download the la
 
 - macOS 11.0 or higher
 
-## Automatic Updates
+## Updates
 
-Converge uses Sparkle for automatic updates. The app will check for updates daily and notify you when a new version is available. You can also manually check for updates in Settings → Updates.
+### Homebrew Users
+
+Update Converge using Homebrew:
+
+```bash
+brew upgrade --cask converge
+```
+
+### Manual Installation
+
+If you installed Converge manually, you can download the latest version from [GitHub Releases](https://github.com/rckbrcls/converge/releases) and replace the app in your Applications folder.
 
 ## Open Source
 

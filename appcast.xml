@@ -10,12 +10,11 @@
             <pubDate>Wed, 28 Jan 2026 22:48:53 +0000</pubDate>
             <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
             <enclosure 
-                url="https://github.com/rckbrcls/converge/releases/download/v1.0.0/Converge-1.0.0.dmg"
+                url="https://github.com/rckbrcls/converge/releases/download/v1.0.0/Converge-macos-universal-v1.0.0.zip"
                 sparkle:version="1.0.0"
                 sparkle:shortVersionString="1.0.0"
                 length="817223"
-                type="application/octet-stream"
-                sparkle:edSignature="xi7pE/MvB07Py0E51Nt72AAVrTcxfNIsoRlND8AfqxuzbUm9IhOBBlzd9FD9T11rNMqa7ZhJxN5eiyfw4UvDAA=="
+                type="application/zip"
             />
             <description><![CDATA[
 # Converge v1.0
@@ -59,9 +58,15 @@ Converge is a native Pomodoro app for macOS, focused on productivity and simplic
 
 ## Installation
 
-1. Download the DMG file from the [releases page](https://github.com/rckbrcls/converge/releases)
-2. Open the downloaded DMG file
-3. Drag the Converge app to the Applications folder
+### Homebrew (Recommended)
+```bash
+brew install --cask converge
+```
+
+### Manual Installation
+1. Download the ZIP file from the [releases page](https://github.com/rckbrcls/converge/releases)
+2. Extract the ZIP file
+3. Move Converge.app to your Applications folder
 4. Run the app for the first time
 
 **Note**: If the app shows security warnings, right-click on the app and select "Open".
