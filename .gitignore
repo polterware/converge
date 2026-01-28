@@ -8,10 +8,11 @@ build/
 # Sparkle EdDSA keys (private key should never be committed!)
 keys/eddsa_private_key.pem
 
-# Releases (appcast pode ser commitado, mas DMGs não)
-releases/*.dmg
+# Releases (ZIPs e archives não devem ser commitados)
+releases/
+releases/*.zip
 releases/*.xcarchive
 releases/DerivedData
-
-# Release scripts and documentation (sensitive information)
+releases/export/
+releases/.sha256
 release/
