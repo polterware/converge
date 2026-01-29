@@ -31,9 +31,15 @@ struct WindowManagerSetupView: View {
                 }
         }
         .tabViewStyle(.automatic)
-        .overlay(alignment: .bottomTrailing) {
-            CompactButton()
-                .padding(16)
+        .overlay(alignment: .bottom) {
+            HStack {
+                SettingsToolbarButton {
+                    WindowManager.shared.openSettingsWindow()
+                }
+                Spacer()
+                CompactButton()
+            }
+            .padding(16)
         }
         .preferredColorScheme(themeSettings.currentColorScheme)
         .onAppear {

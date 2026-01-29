@@ -33,13 +33,6 @@ struct StatisticsView: View {
             }
             .navigationTitle("Statistics")
             .toolbarBackground(.hidden, for: .windowToolbar)
-            .toolbar {
-                ToolbarItem(placement: .automatic) {
-                    SettingsToolbarButton {
-                        WindowManager.shared.openSettingsWindow()
-                    }
-                }
-            }
         }
     }
 

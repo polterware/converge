@@ -37,12 +37,11 @@ struct CompactButton: View {
 
     @ViewBuilder
     private var compactLabel: some View {
-        let base = Label("Toggle", systemImage: iconName)
+        Label("Toggle", systemImage: iconName)
             .labelStyle(.iconOnly)
             .foregroundStyle(.secondary)
             .frame(width: 36, height: 36)
             .contentShape(Circle())
-
-        base.background(.ultraThinMaterial, in: Circle())
+            .background(.ultraThinMaterial, in: Circle())
     }
 }

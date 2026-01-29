@@ -94,13 +94,6 @@ struct SessionHistoryView: View {
             }
             .navigationTitle("History")
             .toolbarBackground(.hidden, for: .windowToolbar)
-            .toolbar {
-                ToolbarItem(placement: .automatic) {
-                    SettingsToolbarButton {
-                        WindowManager.shared.openSettingsWindow()
-                    }
-                }
-            }
         }
     }
 

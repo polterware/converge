@@ -17,7 +17,7 @@ struct PomodoroView: View {
                     .ignoresSafeArea()
                     .animation(.easeInOut(duration: 0.5), value: timer.phase)
                     .animation(.easeInOut(duration: 0.5), value: timer.isRunning)
-                
+
                 VStack(spacing: 20) {
                     HStack(spacing: 8) {
                         Image(systemName: phaseIcon)
@@ -142,13 +142,6 @@ struct PomodoroView: View {
                 .padding(32)
             }
             .toolbarBackground(.hidden, for: .windowToolbar)
-            .toolbar {
-                ToolbarItem(placement: .automatic) {
-                    SettingsToolbarButton {
-                        WindowManager.shared.openSettingsWindow()
-                    }
-                }
-            }
         }
     }
 
