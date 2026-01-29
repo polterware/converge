@@ -31,11 +31,15 @@ struct WindowManagerSetupView: View {
                 }
         }
         .tabViewStyle(.automatic)
-        .overlay(alignment: .bottom) {
-            HStack {
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
                 SettingsToolbarButton {
                     WindowManager.shared.openSettingsWindow()
                 }
+            }
+        }
+        .overlay(alignment: .bottom) {
+            HStack {
                 Spacer()
                 CompactButton()
             }

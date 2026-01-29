@@ -25,6 +25,5 @@ struct SettingsToolbarButton: View {
             .foregroundStyle(.secondary)
             .frame(width: 36, height: 36)
             .contentShape(Circle())
-            .background(.ultraThinMaterial, in: Circle())
     }
 }
