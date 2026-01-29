@@ -1,16 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
     <channel>
-        <item>
-            <title>Version 1.0</title>
-            <pubDate>Thu, 29 Jan 2026 01:13:20 +0000</pubDate>
-            <sparkle:minimumSystemVersion>14.6</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/rckbrcls/converge/releases/download/v1.0/Converge-macos-universal-v1.0.zip" sparkle:version="1" sparkle:shortVersionString="1.0" sparkle:edSignature="XQbpO9I2wyhMx51IVExCPrM0Uty0x8kqAp+FkeC9JA/0bfdFDXd5AeWqlq/OIz9iNQhJfeYYP78VnG9zKexICg==" sparkle:os="macos" length="1370759" type="application/zip" />
-            <description>Converge 1.0 release.</description>
-        </item>
         <title>Converge</title>
         <link>https://github.com/rckbrcls/converge</link>
         <description>Converge - Pomodoro Timer for macOS</description>
         <language>en</language>
+        <item>
+            <title>Version 1.0.2</title>
+            <pubDate>Thu, 29 Jan 2026 01:47:22 +0000</pubDate>
+            <sparkle:minimumSystemVersion>14.6</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/rckbrcls/converge/releases/download/v1.0.2/Converge-macos-universal-v1.0.2.zip" sparkle:version="1" sparkle:shortVersionString="1.0.2" sparkle:edSignature="fxN72PEkOE3Z5UvNIifzm8TCuCaoctUKSqL5pPBa5emdJflPqaQA92qwQUoUvNUphAztaAH/PcF0nFO++oDeCQ==" sparkle:os="macos" length="1373758" type="application/zip" />
+            <description>Converge 1.0.2 release.</description>
+        </item>
     </channel>
 </rss>
