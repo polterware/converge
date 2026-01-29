@@ -43,10 +43,6 @@ struct CompactButton: View {
             .frame(width: 36, height: 36)
             .contentShape(Circle())
 
-        if #available(macOS 26.0, *) {
-            base.glassEffect(.regular.interactive(), in: Circle())
-        } else {
-            base.background(.ultraThinMaterial, in: Circle())
-        }
+        base.background(.ultraThinMaterial, in: Circle())
     }
 }

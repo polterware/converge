@@ -132,9 +132,9 @@ struct SessionHistoryView: View {
                     .padding(.horizontal, 20)
                     .padding(.bottom, 10)
 
-                ForEach(sections, id: \.date) { section in
-                    Section {
-                        ForEach(section.sessions) { session in
+                SwiftUI.ForEach(sections, id: \.date) { section in
+                    SwiftUI.Section {
+                        SwiftUI.ForEach(section.sessions) { session in
                             SessionRowView(session: session, phaseColors: phaseColors)
                                 .padding(.horizontal, 20)
                                 .padding(.vertical, 4)
