@@ -203,7 +203,6 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				2C641BE42F26EB1B00FA7A2E /* XCRemoteSwiftPackageReference "Sparkle" */,
-				2C37907C2F2ADCB50044D61F /* XCLocalSwiftPackageReference "../converge-desktop" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2CDD9D0B2F26D9980013D3FD /* Products */;
@@ -595,13 +594,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCLocalSwiftPackageReference section */
-		2C37907C2F2ADCB50044D61F /* XCLocalSwiftPackageReference "../converge-desktop" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../converge-desktop";
-		};
-/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
 		2C641BE42F26EB1B00FA7A2E /* XCRemoteSwiftPackageReference "Sparkle" */ = {
