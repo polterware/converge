@@ -1,91 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
     <channel>
         <title>Converge</title>
         <link>https://github.com/rckbrcls/converge</link>
         <description>Converge - Pomodoro Timer for macOS</description>
         <language>en</language>
         <item>
-            <title>Version 1.0.0</title>
-            <pubDate>Wed, 28 Jan 2026 22:48:53 +0000</pubDate>
-            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
-            <enclosure 
-                url="https://github.com/rckbrcls/converge/releases/download/v1.0.0/Converge-macos-universal-v1.0.0.zip"
-                sparkle:version="1.0.0"
-                sparkle:shortVersionString="1.0.0"
-                length="817223"
-                type="application/zip"
-            />
-            <description><![CDATA[
-# Converge v1.0
-
-## First Public Release
-
-Converge is a native Pomodoro app for macOS, focused on productivity and simplicity.
-
-## Key Features
-
-### Pomodoro Timer
-- Configurable work and break cycles
-- Automatic or manual mode
-- Support for short and long breaks
-- Visual progress indicator
-
-### Statistics and History
-- Track your productivity with daily, weekly, and monthly counters
-- Complete history of all completed sessions
-- Progress and trends visualization
-
-### Interface and Experience
-- macOS menu bar integration - timer always visible
-- Desktop widget - track the timer without opening the app
-- Theme support: light, dark, or follow system appearance
-- Modern and intuitive interface built with SwiftUI
-
-### Notifications
-- Alerts and sounds at the end of each phase
-- Customizable notification settings
-- Integration with macOS notification system
-
-### Automatic Updates
-- Automatic update system using Sparkle
-- Daily update checks
-- Notifications when new versions are available
-
-## Requirements
-
-- macOS 11.0 or higher
-
-## Installation
-
-### Homebrew (Recommended)
-```bash
-brew install --cask converge
-```
-
-### Manual Installation
-1. Download the ZIP file from the [releases page](https://github.com/rckbrcls/converge/releases)
-2. Extract the ZIP file
-3. Move Converge.app to your Applications folder
-4. Run the app for the first time
-
-**Note**: If the app shows security warnings, right-click on the app and select "Open".
-
-## What's Next
-
-This is just the beginning! We're working on continuous improvements and new features. Your feedback is very important to us.
-
-## Thank You
-
-Thank you for using Converge! We hope it helps you stay focused and increase your productivity.
-
----
-
-**Useful Links:**
-- [GitHub](https://github.com/rckbrcls/converge)
-- [Report Issues](https://github.com/rckbrcls/converge/issues)
-- [Contribute](https://github.com/rckbrcls/converge)
-            ]]></description>
+            <title>Version 1.0.3</title>
+            <pubDate>Thu, 29 Jan 2026 02:01:14 +0000</pubDate>
+            <sparkle:minimumSystemVersion>14.6</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/rckbrcls/converge/releases/download/v1.0.3/Converge-macos-universal-v1.0.3.zip" sparkle:version="1" sparkle:shortVersionString="1.0.3" sparkle:edSignature="wbtJ7SrVsOiJnHZhLc0axGtmjGj5uCZsJaVynZGqIHDJ84Y5/RGpM6DVmcjgqEiv21RW0worpm6RkfStijsRDg==" sparkle:os="macos" length="1374069" type="application/zip" />
+            <description>Converge 1.0.3 release.</description>
         </item>
     </channel>
 </rss>

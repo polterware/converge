@@ -61,7 +61,16 @@ struct WindowManagerSetupView: View {
 }
 
 struct AppCommands: Commands {
+    @ObservedObject private var updateManager = UpdateManager.shared
+
     var body: some Commands {
+        CommandGroup(after: .appInfo) {
+            Button("Check for Updates…") {
+                updateManager.checkForUpdates()
+            }
+            .disabled(!updateManager.canCheckForUpdates)
+        }
+
         CommandGroup(after: .appSettings) {
             Button("Settings...") {
                 WindowManager.shared.openSettingsWindow()
@@ -76,6 +85,7 @@ struct convergeApp: App {
     @StateObject private var pomodoroSettings: PomodoroSettings
     @StateObject private var pomodoroTimer: PomodoroTimer
     @StateObject private var themeSettings: ThemeSettings
+    @StateObject private var updateManager = UpdateManager.shared
 
     init() {
         let settings = PomodoroSettings()

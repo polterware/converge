@@ -2,11 +2,20 @@
 
 # Build artifacts
 build/
+.build/
+DerivedData/
 *.xcuserstate
 *.xcuserdatad
+xcuserdata/
+*.dSYM/
+*.xcarchive
 
 # Sparkle EdDSA keys (private key should never be committed!)
 keys/eddsa_private_key.pem
+keys/
+
+# Local Sparkle tools cache
+.sparkle-tools/
 
 # Releases (ZIPs e archives não devem ser commitados)
 releases/

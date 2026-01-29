@@ -10,6 +10,7 @@ struct MenuBarContent: View {
     @Environment(\.openWindow) private var openWindow
     @EnvironmentObject private var timer: PomodoroTimer
     @EnvironmentObject private var store: StatisticsStore
+    @StateObject private var updateManager = UpdateManager.shared
 
     var body: some View {
         Group {
@@ -47,6 +48,19 @@ struct MenuBarContent: View {
                 Label("Settings...", systemImage: "gearshape.fill")
             }
             .keyboardShortcut(",", modifiers: .command)
+
+            Divider()
+
+            Text("Version \(updateManager.fullVersionString)")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+
+            Button {
+                updateManager.checkForUpdates()
+            } label: {
+                Label("Check for Updates...", systemImage: "arrow.clockwise")
+            }
+            .disabled(!updateManager.canCheckForUpdates)
 
             Divider()
 

@@ -17,24 +17,18 @@ Converge is a native Pomodoro app for macOS built with SwiftUI. Focused on produ
 
 ## Installation
 
-### Homebrew (Recommended)
+### Install via curl
 
-The easiest way to install Converge is via Homebrew Cask:
+Download and install the app:
 
 ```bash
-brew install --cask converge
+curl -fsSL https://converge-focus.vercel.app/install | bash
 ```
 
-To update to the latest version:
+Install a specific version:
 
 ```bash
-brew upgrade --cask converge
-```
-
-**Note**: If you're using a custom Homebrew tap, you may need to add it first:
-```bash
-brew tap rckbrcls/converge
-brew install --cask converge
+curl -fsSL https://converge-focus.vercel.app/install | bash -s -- --version 1.0.0
 ```
 
 ### Manual Installation
@@ -48,21 +42,17 @@ brew install --cask converge
 
 ## Requirements
 
-- macOS 11.0 or higher
+- macOS 14.6 or higher
 
 ## Updates
 
-### Homebrew Users
+### Automatic Updates
 
-Update Converge using Homebrew:
+Converge supports automatic updates via Sparkle inside the app.
 
-```bash
-brew upgrade --cask converge
-```
+### Manual Updates
 
-### Manual Installation
-
-If you installed Converge manually, you can download the latest version from [GitHub Releases](https://github.com/rckbrcls/converge/releases) and replace the app in your Applications folder.
+Download the latest version from [GitHub Releases](https://github.com/rckbrcls/converge/releases) and replace the app in your Applications folder.
 
 ## Open Source
 
@@ -89,4 +79,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **GitHub**: [https://github.com/rckbrcls/converge](https://github.com/rckbrcls/converge)
 - **Issues**: [https://github.com/rckbrcls/converge/issues](https://github.com/rckbrcls/converge/issues)
-- **Download Page**: [Web Download](web/download.html)
+- **Releases**: [https://github.com/rckbrcls/converge/releases](https://github.com/rckbrcls/converge/releases)

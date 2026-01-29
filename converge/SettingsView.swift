@@ -9,6 +9,7 @@ struct SettingsView: View {
     @EnvironmentObject private var settings: PomodoroSettings
     @EnvironmentObject private var themeSettings: ThemeSettings
     @EnvironmentObject private var store: StatisticsStore
+    @StateObject private var updateManager = UpdateManager.shared
     
     @State private var showResetFeedback = false
     @State private var showClearConfirmation = false
@@ -86,6 +87,22 @@ struct SettingsView: View {
             }
 
             NotificationSettingsSection()
+
+            Section("Updates") {
+                HStack {
+                    Text("Current Version")
+                    Spacer()
+                    Text(updateManager.fullVersionString)
+                        .foregroundStyle(.secondary)
+                }
+
+                Button {
+                    updateManager.checkForUpdates()
+                } label: {
+                    Label("Check for Updates", systemImage: "arrow.clockwise")
+                }
+                .disabled(!updateManager.canCheckForUpdates)
+            }
 
             Section("Destructive Actions"){
                 HStack(spacing: 12) {

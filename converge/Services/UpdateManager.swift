@@ -13,22 +13,24 @@ import Sparkle
 #endif
 
 @MainActor
-class UpdateManager: ObservableObject {
+class UpdateManager: NSObject, ObservableObject {
     static let shared = UpdateManager()
     
     #if canImport(Sparkle)
-    private let updaterController: SPUStandardUpdaterController?
+    private var updaterController: SPUStandardUpdaterController?
+    private let appcastURL = "https://rckbrcls.github.io/converge/appcast.xml"
     #endif
     
     @Published var canCheckForUpdates: Bool = false
     @Published var isUpdateAvailable: Bool = false
     
-    private init() {
+    private override init() {
+        super.init()
         #if canImport(Sparkle)
         // Initialize Sparkle updater
         updaterController = SPUStandardUpdaterController(
             startingUpdater: true,
-            updaterDelegate: nil,
+            updaterDelegate: self,
             userDriverDelegate: nil
         )
         
@@ -66,3 +68,11 @@ class UpdateManager: ObservableObject {
         "\(currentVersion) (build \(currentBuild))"
     }
 }
+
+#if canImport(Sparkle)
+extension UpdateManager: SPUUpdaterDelegate {
+    func feedURLString(for updater: SPUUpdater) -> String? {
+        appcastURL
+    }
+}
+#endif

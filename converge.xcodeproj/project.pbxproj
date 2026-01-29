@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2C641BE62F26EB1B00FA7A2E /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 2C641BE52F26EB1B00FA7A2E /* Sparkle */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		2CDD9D1A2F26D9990013D3FD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C641BE62F26EB1B00FA7A2E /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 			);
 			name = converge;
 			packageProductDependencies = (
+				2C641BE52F26EB1B00FA7A2E /* Sparkle */,
 			);
 			productName = converge;
 			productReference = 2CDD9D0A2F26D9980013D3FD /* converge.app */;
@@ -397,6 +403,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = converge/Converge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -409,12 +416,13 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Converge;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_SUFeedURL = "https://github.com/rckbrcls/converge/releases/latest/download/appcast.xml";
+				INFOPLIST_KEY_SUFeedURL = "https://rckbrcls.github.io/converge/appcast.xml";
 				INFOPLIST_KEY_SUPublicEDKey = "c3jKYVWrrjNacKjLqspxj/rlbVeDt13eC+lH4Cc5inU=";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = polterware.converge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -431,9 +439,13 @@
 		2CDD9D2F2F26D9990013D3FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "arm64 x86_64";
+				ARCHS = (
+					arm64,
+					x86_64,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = converge/Converge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -446,12 +458,13 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Converge;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_SUFeedURL = "https://github.com/rckbrcls/converge/releases/latest/download/appcast.xml";
+				INFOPLIST_KEY_SUFeedURL = "https://rckbrcls.github.io/converge/appcast.xml";
 				INFOPLIST_KEY_SUPublicEDKey = "c3jKYVWrrjNacKjLqspxj/rlbVeDt13eC+lH4Cc5inU=";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = polterware.converge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -596,6 +609,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2C641BE52F26EB1B00FA7A2E /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C641BE42F26EB1B00FA7A2E /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2CDD9D022F26D9980013D3FD /* Project object */;
 }

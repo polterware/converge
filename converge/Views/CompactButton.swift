@@ -26,17 +26,23 @@ struct CompactButton: View {
                    CompactWindowService.resetToCompactSize()
                 }
             } label: {
-                Label("Toggle", systemImage: iconName)
-                    .labelStyle(.iconOnly)
-                    .foregroundStyle(.secondary)
-                    .frame(width: 36, height: 36)
-                    .contentShape(Circle())
-                    .glassEffect(.regular.interactive(), in: Circle())
+                compactLabel
             }
             .buttonStyle(PlainButtonStyle())
             .help(helpText)
             .animation(.easeInOut, value: iconName)
             .transition(.opacity)
         }
+    }
+
+    @ViewBuilder
+    private var compactLabel: some View {
+        let base = Label("Toggle", systemImage: iconName)
+            .labelStyle(.iconOnly)
+            .foregroundStyle(.secondary)
+            .frame(width: 36, height: 36)
+            .contentShape(Circle())
+
+        base.background(.ultraThinMaterial, in: Circle())
     }
 }
