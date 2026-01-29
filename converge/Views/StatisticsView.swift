@@ -21,7 +21,6 @@ struct StatisticsView: View {
                 phaseColors.background
                     .ignoresSafeArea()
                     .animation(.easeInOut(duration: 0.5), value: timer.phase)
-                    .animation(.easeInOut(duration: 0.5), value: timer.isRunning)
 
                 ScrollView {
                     VStack(alignment: .leading, spacing: 24) {
@@ -52,7 +51,6 @@ struct StatisticsView: View {
         }
         .frame(maxWidth: .infinity)
         .animation(.easeInOut(duration: 0.3), value: timer.phase)
-        .animation(.easeInOut(duration: 0.3), value: timer.isRunning)
     }
 
     private var chartSection: some View {
@@ -75,14 +73,11 @@ struct StatisticsView: View {
                     .font(.title2)
                     .fontWeight(.semibold)
                     .foregroundColor(phaseColors.primary)
-                    .animation(.easeInOut(duration: 0.3), value: timer.phase)
-                    .animation(.easeInOut(duration: 0.3), value: timer.isRunning)
                 Text("Productivity (last 14 days)")
                     .font(.headline)
                     .foregroundColor(phaseColors.secondary.opacity(0.7))
-                    .animation(.easeInOut(duration: 0.3), value: timer.phase)
-                    .animation(.easeInOut(duration: 0.3), value: timer.isRunning)
             }
+            .animation(.easeInOut(duration: 0.3), value: timer.phase)
             GeometryReader { geometry in
                 ZStack {
                     let barWidth: CGFloat = {
@@ -121,7 +116,6 @@ struct StatisticsView: View {
                         }
                     }
                     .animation(.easeInOut(duration: 0.3), value: timer.phase)
-                    .animation(.easeInOut(duration: 0.3), value: timer.isRunning)
                     .onContinuousHover { phase in
                         switch phase {
                         case .active(let location):

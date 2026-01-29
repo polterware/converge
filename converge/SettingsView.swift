@@ -9,7 +9,7 @@ struct SettingsView: View {
     @EnvironmentObject private var settings: PomodoroSettings
     @EnvironmentObject private var themeSettings: ThemeSettings
     @EnvironmentObject private var store: StatisticsStore
-    @StateObject private var updateManager = UpdateManager.shared
+    @ObservedObject private var updateManager = UpdateManager.shared
     
     @State private var showResetFeedback = false
     @State private var showClearConfirmation = false
@@ -17,119 +17,11 @@ struct SettingsView: View {
     
     var body: some View {
         Form {
-            Section("Timer Settings") {
-                DurationRow(
-                    label: "Work Duration",
-                    value: $settings.workDurationMinutes,
-                    range: 1...120,
-                    unit: "min",
-                    iconName: "clock.fill"
-                )
-                
-                DurationRow(
-                    label: "Short Break Duration",
-                    value: $settings.shortBreakDurationMinutes,
-                    range: 1...60,
-                    unit: "min",
-                    iconName: "cup.and.saucer.fill"
-                )
-                
-                DurationRow(
-                    label: "Long Break Duration",
-                    value: $settings.longBreakDurationMinutes,
-                    range: 1...120,
-                    unit: "min",
-                    iconName: "moon.fill"
-                )
-                
-                DurationRow(
-                    label: "Pomodoros Until Long Break",
-                    value: $settings.pomodorosUntilLongBreak,
-                    range: 1...20,
-                    unit: "count",
-                    iconName: "number.circle.fill"
-                )
-                
-                Toggle(isOn: $settings.autoContinue) {
-                    Label {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("Auto Continue")
-                            Text("Automatically start next phase when current phase ends")
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
-                        }
-                    } icon: {
-                        Image(systemName: "arrow.clockwise")
-                    }
-                }
-            }
-            
-            Section("Visual Settings") {
-                Label {
-                    Picker("Appearance", selection: $themeSettings.selectedTheme) {
-                        ForEach(AppTheme.allCases, id: \.self) { theme in
-                            Text(theme.displayName).tag(theme)
-                        }
-                    }
-                    .pickerStyle(.segmented)
-                } icon: {
-                    Image(systemName: "paintbrush.fill")
-                }
-                
-                HStack(spacing: 4) {
-                    Image(systemName: "info.circle")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                    Text("Choose how the app should appear. System follows your system settings.")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
-            }
-
+            timerSettingsSection
+            visualSettingsSection
             NotificationSettingsSection()
-
-            Section("Updates") {
-                HStack {
-                    Text("Current Version")
-                    Spacer()
-                    Text(updateManager.fullVersionString)
-                        .foregroundStyle(.secondary)
-                }
-
-                Button {
-                    updateManager.checkForUpdates()
-                } label: {
-                    Label("Check for Updates", systemImage: "arrow.clockwise")
-                }
-                .disabled(!updateManager.canCheckForUpdates)
-            }
-
-            Section("Destructive Actions"){
-                HStack(spacing: 12) {
-                    Button {
-                        showResetConfirmation = true
-                    } label: {
-                        HStack {
-                            Image(systemName: "arrow.counterclockwise")
-                            Text("Reset to Defaults")
-                        }
-                        .frame(maxWidth: .infinity)
-                    }
-                    .foregroundStyle(.red)
-                    
-                    Button {
-                        showClearConfirmation = true
-                    } label: {
-                        HStack {
-                            Image(systemName: "trash")
-                            Text("Clear History")
-                        }
-                        .frame(maxWidth: .infinity)
-                    }
-                    .foregroundStyle(.red)
-                    .disabled(store.recentSessions(limit: 1).isEmpty)
-                }
-            }
+            updatesSection
+            destructiveActionsSection
         }
         .formStyle(.grouped)
         .navigationTitle("Settings")
@@ -163,6 +55,119 @@ struct SettingsView: View {
         }
     }
     
+    private var timerSettingsSection: some View {
+        Section("Timer Settings") {
+            DurationRow(
+                label: "Work Duration",
+                value: $settings.workDurationMinutes,
+                range: 1...120,
+                unit: "min",
+                iconName: "clock.fill"
+            )
+            DurationRow(
+                label: "Short Break Duration",
+                value: $settings.shortBreakDurationMinutes,
+                range: 1...60,
+                unit: "min",
+                iconName: "cup.and.saucer.fill"
+            )
+            DurationRow(
+                label: "Long Break Duration",
+                value: $settings.longBreakDurationMinutes,
+                range: 1...120,
+                unit: "min",
+                iconName: "moon.fill"
+            )
+            DurationRow(
+                label: "Pomodoros Until Long Break",
+                value: $settings.pomodorosUntilLongBreak,
+                range: 1...20,
+                unit: "count",
+                iconName: "number.circle.fill"
+            )
+            Toggle(isOn: $settings.autoContinue) {
+                Label {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Auto Continue")
+                        Text("Automatically start next phase when current phase ends")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                } icon: {
+                    Image(systemName: "arrow.clockwise")
+                }
+            }
+        }
+    }
+    
+    private var visualSettingsSection: some View {
+        Section("Visual Settings") {
+            Label {
+                Picker("Appearance", selection: $themeSettings.selectedTheme) {
+                    ForEach(AppTheme.allCases, id: \.self) { theme in
+                        Text(theme.displayName).tag(theme)
+                    }
+                }
+                .pickerStyle(.segmented)
+            } icon: {
+                Image(systemName: "paintbrush.fill")
+            }
+            HStack(spacing: 4) {
+                Image(systemName: "info.circle")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                Text("Choose how the app should appear. System follows your system settings.")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+        }
+    }
+    
+    private var updatesSection: some View {
+        Section("Updates") {
+            HStack {
+                Text("Current Version")
+                Spacer()
+                Text(updateManager.fullVersionString)
+                    .foregroundStyle(.secondary)
+            }
+            Button {
+                updateManager.checkForUpdates()
+            } label: {
+                Label("Check for Updates", systemImage: "arrow.clockwise")
+            }
+            .disabled(!updateManager.canCheckForUpdates)
+        }
+    }
+    
+    private var destructiveActionsSection: some View {
+        Section("Destructive Actions") {
+            HStack(spacing: 12) {
+                Button {
+                    showResetConfirmation = true
+                } label: {
+                    HStack {
+                        Image(systemName: "arrow.counterclockwise")
+                        Text("Reset to Defaults")
+                    }
+                    .frame(maxWidth: .infinity)
+                }
+                .foregroundStyle(.red)
+                Button {
+                    showClearConfirmation = true
+                } label: {
+                    HStack {
+                        Image(systemName: "trash")
+                        Text("Clear History")
+                    }
+                    .frame(maxWidth: .infinity)
+                }
+                .foregroundStyle(.red)
+                .disabled(store.recentSessions(limit: 1).isEmpty)
+            }
+        }
+    }
+    
     private func resetToDefaults() {
         settings.resetToDefaults()
         themeSettings.resetToDefaults()
@@ -179,6 +184,7 @@ struct SettingsView_Previews: PreviewProvider {
         NavigationStack {
             SettingsView()
                 .environmentObject(PomodoroSettings())
+                .environmentObject(StatisticsStore.shared)
                 .environmentObject(ThemeSettings())
         }
     }

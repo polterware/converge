@@ -103,7 +103,6 @@ struct SessionHistoryView: View {
         phaseColors.background
             .ignoresSafeArea()
             .animation(.easeInOut(duration: 0.5), value: timer.phase)
-            .animation(.easeInOut(duration: 0.5), value: timer.isRunning)
     }
 
     private var mainContent: some View {

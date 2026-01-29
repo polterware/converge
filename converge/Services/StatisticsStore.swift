@@ -17,6 +17,7 @@ final class StatisticsStore: ObservableObject {
     static let shared = StatisticsStore()
 
     private static let userDefaultsKey = "pomodoro_sessions"
+    private static let maxSessionsCount = 500
     private let calendar = Calendar.current
 
     @Published private(set) var sessions: [PomodoroSession] = [] {
@@ -34,6 +35,7 @@ final class StatisticsStore: ObservableObject {
     func recordCompletedPomodoro(durationSeconds: Int) {
         let session = PomodoroSession(completedAt: Date(), durationSeconds: durationSeconds)
         sessions.append(session)
+        trimSessionsIfNeeded()
     }
 
     func clearAll() {
@@ -80,9 +82,15 @@ final class StatisticsStore: ObservableObject {
         do {
             let decoded = try JSONDecoder().decode([PomodoroSession].self, from: data)
             sessions = decoded
+            trimSessionsIfNeeded()
         } catch {
             sessions = []
         }
+    }
+
+    private func trimSessionsIfNeeded() {
+        guard sessions.count > Self.maxSessionsCount else { return }
+        sessions = Array(sessions.sorted { $0.completedAt > $1.completedAt }.prefix(Self.maxSessionsCount))
     }
 
     private func save() {

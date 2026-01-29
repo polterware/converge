@@ -10,7 +10,7 @@ struct MenuBarContent: View {
     @Environment(\.openWindow) private var openWindow
     @EnvironmentObject private var timer: PomodoroTimer
     @EnvironmentObject private var store: StatisticsStore
-    @StateObject private var updateManager = UpdateManager.shared
+    @ObservedObject private var updateManager = UpdateManager.shared
 
     var body: some View {
         Group {

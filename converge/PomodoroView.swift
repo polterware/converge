@@ -28,8 +28,7 @@ struct PomodoroView: View {
                             .foregroundColor(phaseColors.secondary)
                     }
                     .animation(.easeInOut(duration: 0.3), value: timer.phase)
-                    .animation(.easeInOut(duration: 0.3), value: timer.isRunning)
-                    
+
                     ZStack {
                         CircularProgressView(
                             progress: timer.progress,
@@ -37,26 +36,24 @@ struct PomodoroView: View {
                             color: phaseColors.primary
                         )
                         .frame(width: 220, height: 220)
-                        .animation(.easeInOut(duration: 0.3), value: timer.progress)
-                        .animation(.easeInOut(duration: 0.3), value: timer.isRunning)
-                        
+                        .animation(.linear(duration: 0.3), value: timer.progress)
+
                         VStack(spacing: 4) {
                             Text(timer.formattedTime)
                                 .font(.system(size: 48, weight: .medium, design: .monospaced))
                                 .foregroundColor(phaseColors.primary)
-                                .animation(.easeInOut(duration: 0.3), value: timer.phase)
-                                .animation(.easeInOut(duration: 0.3), value: timer.isRunning)
                         }
                     }
                     .transition(.scale.combined(with: .opacity))
-                    
+                    .animation(.easeInOut(duration: 0.3), value: timer.phase)
+
                     HStack(spacing: 6) {
                         Text("Completed: \(timer.completedPomodoros)")
                             .font(.subheadline)
                             .foregroundColor(phaseColors.secondary.opacity(0.7))
                     }
                     .transition(.opacity)
-                    
+
                     if timer.phase != .break {
                         HStack(spacing: 6) {
                             Image(systemName: "clock.fill")
@@ -67,12 +64,10 @@ struct PomodoroView: View {
                                 .foregroundColor(phaseColors.secondary.opacity(0.7))
                         }
                         .transition(.opacity)
-                        .animation(.easeInOut(duration: 0.3), value: timer.completedPomodoros)
                         .animation(.easeInOut(duration: 0.3), value: timer.phase)
                     }
 
                     if timer.isWaitingForManualStart {
-                        // Manual mode - show button to start next phase
                         HStack(spacing: 12) {
                             Button {
                                 withAnimation(.easeInOut(duration: 0.2)) {
@@ -87,8 +82,6 @@ struct PomodoroView: View {
                                 .contentShape(Rectangle())
                             }
                             .buttonStyle(RoundedBorderedProminentButtonStyle(color: phaseColors.accent))
-                            .animation(.easeInOut(duration: 0.3), value: timer.phase)
-                            .animation(.easeInOut(duration: 0.3), value: timer.isWaitingForManualStart)
 
                             Button {
                                 withAnimation(.easeInOut(duration: 0.2)) {
@@ -99,11 +92,9 @@ struct PomodoroView: View {
                                     .labelStyle(.titleAndIcon)
                             }
                             .buttonStyle(RoundedBorderedButtonStyle(color: phaseColors.primary))
-                            .animation(.easeInOut(duration: 0.3), value: timer.phase)
-                            .animation(.easeInOut(duration: 0.3), value: timer.isWaitingForManualStart)
                         }
+                        .animation(.easeInOut(duration: 0.3), value: timer.phase)
                     } else {
-                        // Normal mode - show Start/Pause and Reset buttons
                         HStack(spacing: 12) {
                             Button {
                                 withAnimation(.easeInOut(duration: 0.2)) {
@@ -122,8 +113,6 @@ struct PomodoroView: View {
                                 .contentShape(Rectangle())
                             }
                             .buttonStyle(RoundedBorderedProminentButtonStyle(color: phaseColors.accent))
-                            .animation(.easeInOut(duration: 0.3), value: timer.phase)
-                            .animation(.easeInOut(duration: 0.3), value: timer.isRunning)
 
                             Button {
                                 withAnimation(.easeInOut(duration: 0.2)) {
@@ -134,9 +123,8 @@ struct PomodoroView: View {
                                     .labelStyle(.titleAndIcon)
                             }
                             .buttonStyle(RoundedBorderedButtonStyle(color: phaseColors.primary))
-                            .animation(.easeInOut(duration: 0.3), value: timer.phase)
-                            .animation(.easeInOut(duration: 0.3), value: timer.isRunning)
                         }
+                        .animation(.easeInOut(duration: 0.3), value: timer.phase)
                     }
                 }
                 .padding(32)
@@ -198,5 +186,6 @@ struct PomodoroView_Previews: PreviewProvider {
         PomodoroView()
             .environmentObject(PomodoroTimer(settings: settings))
             .environmentObject(settings)
+            .environmentObject(ThemeSettings())
     }
 }

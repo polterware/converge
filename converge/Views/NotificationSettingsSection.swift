@@ -7,7 +7,7 @@ import SwiftUI
 import AppKit
 
 struct NotificationSettingsSection: View {
-    @StateObject private var settings = NotificationSettings.shared
+    @ObservedObject private var settings = NotificationSettings.shared
     @State private var currentSound: NSSound?
 
     var body: some View {

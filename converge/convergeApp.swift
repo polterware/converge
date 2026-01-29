@@ -14,7 +14,7 @@ struct WindowManagerSetupView: View {
     @EnvironmentObject private var pomodoroSettings: PomodoroSettings
     @EnvironmentObject private var themeSettings: ThemeSettings
     @EnvironmentObject private var statisticsStore: StatisticsStore
-    
+
     var body: some View {
         TabView {
             PomodoroView()
@@ -90,14 +90,13 @@ struct AppCommands: Commands {
 struct convergeApp: App {
     @StateObject private var pomodoroSettings: PomodoroSettings
     @StateObject private var pomodoroTimer: PomodoroTimer
-    @StateObject private var themeSettings: ThemeSettings
-    @StateObject private var updateManager = UpdateManager.shared
+    @StateObject private var themeSettings = ThemeSettings()
+    @ObservedObject private var updateManager = UpdateManager.shared
 
     init() {
         let settings = PomodoroSettings()
         _pomodoroSettings = StateObject(wrappedValue: settings)
         _pomodoroTimer = StateObject(wrappedValue: PomodoroTimer(settings: settings))
-        _themeSettings = StateObject(wrappedValue: ThemeSettings())
         
         Task {
             await NotificationManager.shared.requestAuthorization()

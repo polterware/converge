@@ -4,8 +4,8 @@
 //
 
 import SwiftUI
-import Combine
 import AppKit
+import Combine
 
 enum AppTheme: String, CaseIterable {
     case light
@@ -21,28 +21,26 @@ enum AppTheme: String, CaseIterable {
     }
 }
 
-@MainActor
 final class ThemeSettings: ObservableObject {
     @Published var selectedTheme: AppTheme {
         didSet {
             save()
-            // Schedule all updates asynchronously to avoid publishing during view updates
             Task { @MainActor in
                 self.updateSystemThemeObserver()
-                self.scheduleThemeUpdate()
-                // If not system theme, update immediately
-                if self.selectedTheme != .system {
+                if self.selectedTheme == .system {
+                    self.updateSystemColorScheme()
+                } else {
                     self.updateCurrentColorSchemeSync()
                 }
             }
         }
     }
     
-    @Published private var systemColorScheme: ColorScheme? = nil
+    @Published private(set) var systemColorScheme: ColorScheme? = nil
     
     @Published var currentColorScheme: ColorScheme? = nil
     
-    private var appearanceTimer: Timer?
+    private var appearanceObserver: NSKeyValueObservation?
     
     private enum Keys {
         static let selectedTheme = "selectedTheme"
@@ -76,32 +74,23 @@ final class ThemeSettings: ObservableObject {
         }
         
         updateSystemThemeObserver()
-        scheduleThemeUpdate()
     }
     
     deinit {
-        appearanceTimer?.invalidate()
-    }
-    
-    /// Schedules @Published updates on the next run loop to avoid "Publishing changes from within view updates".
-    /// Marked nonisolated so the Timer closure can call it; actual updates run on main via assumeIsolated.
-    private nonisolated func scheduleThemeUpdate() {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            MainActor.assumeIsolated {
-                self.updateSystemColorScheme()
-            }
-        }
+        appearanceObserver?.invalidate()
     }
     
     private func updateSystemThemeObserver() {
-        appearanceTimer?.invalidate()
-        appearanceTimer = nil
+        appearanceObserver?.invalidate()
+        appearanceObserver = nil
         
         guard selectedTheme == .system else { return }
         
-        appearanceTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [weak self] _ in
-            self?.scheduleThemeUpdate()
+        appearanceObserver = NSApp.observe(\.effectiveAppearance) { [weak self] _, _ in
+            guard let settings = self else { return }
+            Task { @MainActor in
+                settings.updateSystemColorScheme()
+            }
         }
     }
     

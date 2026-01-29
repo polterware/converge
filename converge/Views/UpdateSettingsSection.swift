@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UpdateSettingsSection: View {
-    @StateObject private var updateManager = UpdateManager.shared
+    @ObservedObject private var updateManager = UpdateManager.shared
     @State private var isCheckingForUpdates = false
     
     var body: some View {
