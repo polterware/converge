@@ -56,10 +56,11 @@ fetch_release_json() {
 }
 
 select_asset() {
-  local arch
+  local arch json
   arch=$(uname -m)
+  json=$(cat)
 
-  python3 - "$arch" << 'PY'
+  printf '%s' "$json" | python3 -c '
 import json
 import sys
 
@@ -114,7 +115,7 @@ print(json.dumps({
     "url": asset.get("browser_download_url"),
     "size": asset.get("size"),
 }))
-PY
+' "$arch"
 }
 
 if ! command -v python3 >/dev/null 2>&1; then
@@ -198,4 +199,3 @@ echo "✅ ${APP_DISPLAY_NAME} installed at $TARGET_PATH"
 if [ "$TARGET_DIR" != "/Applications" ]; then
   echo "Note: Installed to $TARGET_DIR because /Applications is not writable."
 fi
-

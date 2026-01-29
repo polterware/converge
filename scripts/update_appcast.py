@@ -51,6 +51,22 @@ def load_or_create_appcast(path, title, link, description, language):
     return tree, root, channel
 
 
+def ensure_channel_metadata(channel, title, link, description, language):
+    def get_or_create(tag, value):
+        existing = channel.find(tag)
+        if existing is None:
+            existing = ET.SubElement(channel, tag)
+        existing.text = value
+        return existing
+
+    title_el = get_or_create("title", title)
+    link_el = get_or_create("link", link)
+    desc_el = get_or_create("description", description)
+    lang_el = get_or_create("language", language)
+
+    return [title_el, link_el, desc_el, lang_el]
+
+
 def remove_existing_item(channel, sparkle_version, enclosure_url):
     for item in list(channel.findall("item")):
         enclosure = item.find("enclosure")
@@ -88,6 +104,14 @@ def main():
         args.language,
     )
 
+    metadata_nodes = ensure_channel_metadata(
+        channel,
+        args.title,
+        args.link,
+        args.description,
+        args.language,
+    )
+
     remove_existing_item(channel, args.version, args.enclosure_url)
 
     item = ET.Element("item")
@@ -108,7 +132,25 @@ def main():
     if args.release_notes:
         ET.SubElement(item, "description").text = args.release_notes
 
-    channel.insert(0, item)
+    # Reorder channel nodes: metadata first, then other non-item nodes, then items.
+    existing_children = list(channel)
+    existing_items = [child for child in existing_children if child.tag == "item"]
+    other_nodes = [
+        child for child in existing_children
+        if child.tag not in {"title", "link", "description", "language", "item"}
+    ]
+
+    for child in existing_children:
+        channel.remove(child)
+
+    for node in metadata_nodes:
+        channel.append(node)
+    for node in other_nodes:
+        channel.append(node)
+
+    channel.append(item)
+    for existing_item in existing_items:
+        channel.append(existing_item)
 
     indent(root)
     tree.write(args.appcast, encoding="utf-8", xml_declaration=True)
