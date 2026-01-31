@@ -9,7 +9,7 @@ struct PomodoroView: View {
     @EnvironmentObject private var timer: PomodoroTimer
     @EnvironmentObject private var themeSettings: ThemeSettings
     @Environment(\.colorScheme) private var systemColorScheme
-
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -17,7 +17,7 @@ struct PomodoroView: View {
                     .ignoresSafeArea()
                     .animation(.easeInOut(duration: 0.5), value: timer.phase)
                     .animation(.easeInOut(duration: 0.5), value: timer.isRunning)
-
+                
                 VStack(spacing: 20) {
                     HStack(spacing: 8) {
                         Image(systemName: phaseIcon)
@@ -28,7 +28,7 @@ struct PomodoroView: View {
                             .foregroundColor(phaseColors.secondary)
                     }
                     .animation(.easeInOut(duration: 0.3), value: timer.phase)
-
+                    
                     ZStack {
                         CircularProgressView(
                             progress: timer.progress,
@@ -37,7 +37,7 @@ struct PomodoroView: View {
                         )
                         .frame(width: 220, height: 220)
                         .animation(.linear(duration: 0.3), value: timer.progress)
-
+                        
                         VStack(spacing: 4) {
                             Text(timer.formattedTime)
                                 .font(.system(size: 48, weight: .medium, design: .monospaced))
@@ -46,27 +46,29 @@ struct PomodoroView: View {
                     }
                     .transition(.scale.combined(with: .opacity))
                     .animation(.easeInOut(duration: 0.3), value: timer.phase)
-
-                    HStack(spacing: 6) {
-                        Text("Completed: \(timer.completedPomodoros)")
-                            .font(.subheadline)
-                            .foregroundColor(phaseColors.secondary.opacity(0.7))
-                    }
-                    .transition(.opacity)
-
-                    if timer.phase != .break {
+                    
+                    VStack(spacing: 10){
                         HStack(spacing: 6) {
-                            Image(systemName: "clock.fill")
-                                .font(.subheadline)
-                                .foregroundColor(phaseColors.secondary.opacity(0.7))
-                            Text("Next Break: \(timer.nextBreakFormattedTime)")
+                            Text("Completed: \(timer.completedPomodoros)")
                                 .font(.subheadline)
                                 .foregroundColor(phaseColors.secondary.opacity(0.7))
                         }
                         .transition(.opacity)
-                        .animation(.easeInOut(duration: 0.3), value: timer.phase)
+                        
+                        if timer.phase != .break {
+                            HStack(spacing: 6) {
+                                Image(systemName: "clock.fill")
+                                    .font(.subheadline)
+                                    .foregroundColor(phaseColors.secondary.opacity(0.7))
+                                Text("Next Break: \(timer.nextBreakFormattedTime)")
+                                    .font(.subheadline)
+                                    .foregroundColor(phaseColors.secondary.opacity(0.7))
+                            }
+                            .transition(.opacity)
+                            .animation(.easeInOut(duration: 0.3), value: timer.phase)
+                        }
                     }
-
+                    
                     if timer.isWaitingForManualStart {
                         HStack(spacing: 12) {
                             Button {
@@ -82,7 +84,7 @@ struct PomodoroView: View {
                                 .contentShape(Rectangle())
                             }
                             .buttonStyle(RoundedBorderedProminentButtonStyle(color: phaseColors.accent))
-
+                            
                             Button {
                                 withAnimation(.easeInOut(duration: 0.2)) {
                                     timer.reset()
@@ -113,7 +115,7 @@ struct PomodoroView: View {
                                 .contentShape(Rectangle())
                             }
                             .buttonStyle(RoundedBorderedProminentButtonStyle(color: phaseColors.accent))
-
+                            
                             Button {
                                 withAnimation(.easeInOut(duration: 0.2)) {
                                     timer.reset()
@@ -132,7 +134,7 @@ struct PomodoroView: View {
             .toolbarBackground(.hidden, for: .windowToolbar)
         }
     }
-
+    
     private var phaseLabel: String {
         switch timer.phase {
         case .idle: return "Idle"
