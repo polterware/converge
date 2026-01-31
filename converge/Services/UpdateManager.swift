@@ -18,7 +18,7 @@ class UpdateManager: NSObject, ObservableObject {
     
     #if canImport(Sparkle)
     private var updaterController: SPUStandardUpdaterController?
-    private let appcastURL = "https://rckbrcls.github.io/converge/appcast.xml"
+    private let appcastURL = "https://polterware.github.io/converge/appcast.xml"
     #endif
     
     @Published var canCheckForUpdates: Bool = false

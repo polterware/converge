@@ -32,7 +32,7 @@ curl -fsSL https://converge-focus.vercel.app/install | bash -s -- --version 1.0.
 
 ### Manual Installation
 
-1. Download the ZIP file from [GitHub Releases](https://github.com/rckbrcls/converge/releases)
+1. Download the ZIP file from [GitHub Releases](https://github.com/polterware/converge/releases)
 2. Extract the ZIP file
 3. Move `Converge.app` to your Applications folder
 4. Run the app for the first time
@@ -51,7 +51,7 @@ Converge supports automatic updates via Sparkle inside the app.
 
 ### Manual Updates
 
-Download the latest version from [GitHub Releases](https://github.com/rckbrcls/converge/releases) and replace the app in your Applications folder.
+Download the latest version from [GitHub Releases](https://github.com/polterware/converge/releases) and replace the app in your Applications folder.
 
 ## Open Source
 
@@ -76,6 +76,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Links
 
-- **GitHub**: [https://github.com/rckbrcls/converge](https://github.com/rckbrcls/converge)
-- **Issues**: [https://github.com/rckbrcls/converge/issues](https://github.com/rckbrcls/converge/issues)
-- **Releases**: [https://github.com/rckbrcls/converge/releases](https://github.com/rckbrcls/converge/releases)
+- **GitHub**: [https://github.com/polterware/converge](https://github.com/polterware/converge)
+- **Issues**: [https://github.com/polterware/converge/issues](https://github.com/polterware/converge/issues)
+- **Releases**: [https://github.com/polterware/converge/releases](https://github.com/polterware/converge/releases)

@@ -21,9 +21,9 @@ jobs:
       SCHEME: converge
       APP_BUNDLE_NAME: converge.app
       APP_DISPLAY_NAME: Converge
-      REPO: rckbrcls/converge
+      REPO: polterware/converge
       APPCAST_PATH: appcast.xml
-      APPCAST_URL: https://rckbrcls.github.io/converge/appcast.xml
+      APPCAST_URL: https://polterware.github.io/converge/appcast.xml
       SPARKLE_TOOLS_VERSION: 2.8.1
     steps:
       - name: Checkout

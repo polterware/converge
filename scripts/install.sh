@@ -3,7 +3,7 @@
 set -euo pipefail
 
 APP_DISPLAY_NAME="Converge"
-REPO="rckbrcls/converge"
+REPO="polterware/converge"
 GITHUB_API="https://api.github.com/repos/${REPO}/releases"
 
 usage() {

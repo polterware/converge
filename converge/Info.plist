@@ -25,7 +25,7 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>SUFeedURL</key>
-	<string>https://rckbrcls.github.io/converge/appcast.xml</string>
+	<string>https://polterware.github.io/converge/appcast.xml</string>
 	<key>SUPublicEDKey</key>
 	<string>phe/n2NWFr5bkBM9+cw83o5PMP4ZsJtbOWbqdRnKWQs=</string>
 </dict>
