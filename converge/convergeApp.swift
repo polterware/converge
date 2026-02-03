@@ -9,44 +9,61 @@ import SwiftUI
 import AppKit
 
 struct WindowManagerSetupView: View {
+    private enum MainTab: Hashable {
+        case pomodoro
+        case statistics
+        case history
+    }
+
     @Environment(\.openWindow) private var openWindow
     @EnvironmentObject private var pomodoroTimer: PomodoroTimer
     @EnvironmentObject private var pomodoroSettings: PomodoroSettings
     @EnvironmentObject private var themeSettings: ThemeSettings
     @EnvironmentObject private var statisticsStore: StatisticsStore
+    @Environment(\.colorScheme) private var systemColorScheme
     @AppStorage("hasSeenWelcomeModal") private var hasSeenWelcomeModal = false
     @State private var showWelcomeModal = false
+    @State private var selectedTab: MainTab = .pomodoro
 
     var body: some View {
-        TabView {
-            PomodoroView()
-                .tabItem {
-                    Image(systemName: "stopwatch.fill")
-                }
-            StatisticsView()
-                .tabItem {
-                    Image(systemName: "chart.bar.fill")
-                }
-            SessionHistoryView()
-                .tabItem {
-                    Image(systemName: "clock.arrow.circlepath")
-                }
-        }
-        .tabViewStyle(.automatic)
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                SettingsToolbarButton {
-                    WindowManager.shared.openSettingsWindow()
+        ZStack {
+            GlassBackground(tint: phaseColors.background)
+                .animation(.easeInOut(duration: 0.5), value: pomodoroTimer.phase)
+                .animation(.easeInOut(duration: 0.5), value: pomodoroTimer.isRunning)
+
+            TabView(selection: $selectedTab) {
+                PomodoroView(isActive: selectedTab == .pomodoro)
+                    .tabItem {
+                        Image(systemName: "stopwatch.fill")
+                    }
+                    .tag(MainTab.pomodoro)
+                StatisticsView(isActive: selectedTab == .statistics)
+                    .tabItem {
+                        Image(systemName: "chart.bar.fill")
+                    }
+                    .tag(MainTab.statistics)
+                SessionHistoryView(isActive: selectedTab == .history)
+                    .tabItem {
+                        Image(systemName: "clock.arrow.circlepath")
+                    }
+                    .tag(MainTab.history)
+            }
+            .tabViewStyle(.automatic)
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    SettingsToolbarButton {
+                        WindowManager.shared.openSettingsWindow()
+                    }
                 }
             }
-        }
-        .overlay(alignment: .bottom) {
-            HStack {
-                FullScreenButton()
-                Spacer()
-                CompactButton()
+            .overlay(alignment: .bottom) {
+                HStack {
+                    FullScreenButton()
+                    Spacer()
+                    CompactButton()
+                }
+                .padding(16)
             }
-            .padding(16)
         }
         .preferredColorScheme(themeSettings.currentColorScheme)
         .sheet(isPresented: $showWelcomeModal) {
@@ -63,9 +80,9 @@ struct WindowManagerSetupView: View {
             }
             WindowManager.shared.setOpenWindowAction { id in
                 NSApp.activate(ignoringOtherApps: true)
-                
+
                 let windowTitle = id == "main" ? "" : "Converge Settings"
-                
+
                 // Check if window already exists
                 if let existingWindow = NSApp.windows.first(where: { window in
                     if id == "main" {
@@ -81,6 +98,18 @@ struct WindowManagerSetupView: View {
                 }
             }
         }
+    }
+
+    private var effectiveColorScheme: ColorScheme {
+        themeSettings.currentColorScheme ?? systemColorScheme
+    }
+
+    private var phaseColors: PhaseColors {
+        PhaseColors.color(
+            for: pomodoroTimer.phase,
+            colorScheme: effectiveColorScheme,
+            isRunning: pomodoroTimer.isRunning
+        )
     }
 }
 
@@ -129,6 +158,7 @@ struct convergeApp: App {
                 .environmentObject(pomodoroSettings)
                 .environmentObject(themeSettings)
                 .environmentObject(StatisticsStore.shared)
+                .glassWindow()
         }
         .windowResizability(.automatic)
         .defaultSize(width: 400, height: 500)
@@ -145,6 +175,7 @@ struct convergeApp: App {
             .environmentObject(themeSettings)
             .environmentObject(StatisticsStore.shared)
             .preferredColorScheme(themeSettings.currentColorScheme)
+            .glassWindow()
         }
         .windowResizability(.automatic)
         .defaultSize(width: 480, height: 450)

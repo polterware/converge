@@ -6,6 +6,7 @@
 import SwiftUI
 
 struct SessionHistoryView: View {
+    let isActive: Bool
     @EnvironmentObject private var store: StatisticsStore
     @EnvironmentObject private var timer: PomodoroTimer
     @EnvironmentObject private var themeSettings: ThemeSettings
@@ -90,7 +91,11 @@ struct SessionHistoryView: View {
             ZStack {
                 backgroundView
 
-                mainContent
+                if isActive {
+                    mainContent
+                } else {
+                    Color.clear
+                }
             }
             .navigationTitle("History")
             .toolbarBackground(.hidden, for: .windowToolbar)
@@ -100,7 +105,7 @@ struct SessionHistoryView: View {
     // MARK: - Subviews
 
     private var backgroundView: some View {
-        phaseColors.background
+        Color.clear
             .ignoresSafeArea()
             .animation(.easeInOut(duration: 0.5), value: timer.phase)
     }
@@ -134,7 +139,7 @@ struct SessionHistoryView: View {
                         }
                         .padding(.horizontal, 20)
                         .padding(.vertical, 8)
-                        .background(phaseColors.background)
+                        .background(phaseColors.background.opacity(0.45))
 
                         SwiftUI.ForEach(section.sessions) { session in
                             SessionRowView(session: session, phaseColors: phaseColors)
@@ -236,7 +241,7 @@ struct SessionRowView: View {
 #if DEBUG
 #Preview {
     let settings = PomodoroSettings()
-    SessionHistoryView()
+    SessionHistoryView(isActive: true)
         .environmentObject(StatisticsStore.shared)
         .environmentObject(PomodoroTimer(settings: settings))
         .environmentObject(settings)

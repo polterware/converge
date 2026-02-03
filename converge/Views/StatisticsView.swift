@@ -7,6 +7,7 @@ import SwiftUI
 import Charts
 
 struct StatisticsView: View {
+    let isActive: Bool
     @EnvironmentObject private var store: StatisticsStore
     @EnvironmentObject private var timer: PomodoroTimer
     @EnvironmentObject private var themeSettings: ThemeSettings
@@ -18,20 +19,34 @@ struct StatisticsView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                phaseColors.background
+                Color.clear
                     .ignoresSafeArea()
-                    .animation(.easeInOut(duration: 0.5), value: timer.phase)
 
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 24) {
-                        countersSection
-                        chartSection
-                    }
-                    .padding(24)
+                if isActive {
+                    mainContent
+                } else {
+                    Color.clear
                 }
             }
             .navigationTitle("Statistics")
             .toolbarBackground(.hidden, for: .windowToolbar)
+            .onChange(of: isActive) { _, newValue in
+                if !newValue {
+                    selectedDate = nil
+                    mouseLocation = nil
+                    isHovering = false
+                }
+            }
+        }
+    }
+
+    private var mainContent: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 24) {
+                countersSection
+                chartSection
+            }
+            .padding(24)
         }
     }
 
@@ -97,7 +112,6 @@ struct StatisticsView: View {
                         .foregroundStyle(phaseColors.accent)
                     }
                     .frame(height: 200)
-                    .chartXSelection(value: $selectedDate)
                     .chartXAxis {
                         AxisMarks(values: .stride(by: .day)) { _ in
                             AxisGridLine()
@@ -117,39 +131,49 @@ struct StatisticsView: View {
                     }
                     .animation(.easeInOut(duration: 0.3), value: timer.phase)
                     .onContinuousHover { phase in
-                        switch phase {
-                        case .active(let location):
-                            mouseLocation = location
-                            isHovering = true
-
-                            // Mapear posição X do mouse para a data correspondente
-                            if !chartData.isEmpty {
-                                let chartWidth = geometry.size.width
-                                let relativeX = max(0, min(0.9999, location.x / chartWidth))
-
-                                // Dividir o espaço em segmentos iguais para cada barra
-                                // Cada barra ocupa 1/n do espaço total
-                                let segmentWidth = 1.0 / Double(chartData.count)
-
-                                // Calcular índice baseado em qual segmento o mouse está
-                                var index = Int(relativeX / segmentWidth)
-
-                                // Garantir que o índice está no range válido (0 até count-1)
-                                // Se o cálculo resultar em count ou maior, usar a última barra
-                                if index >= chartData.count {
-                                    index = chartData.count - 1
+                        guard isActive else { return }
+                        DispatchQueue.main.async {
+                            switch phase {
+                            case .active(let location):
+                                if mouseLocation != location {
+                                    mouseLocation = location
+                                }
+                                if !isHovering {
+                                    isHovering = true
                                 }
 
-                                selectedDate = chartData[index].date
+                                // Mapear posição X do mouse para a data correspondente
+                                if !chartData.isEmpty {
+                                    let chartWidth = geometry.size.width
+                                    let relativeX = max(0, min(0.9999, location.x / chartWidth))
+
+                                    // Dividir o espaço em segmentos iguais para cada barra
+                                    // Cada barra ocupa 1/n do espaço total
+                                    let segmentWidth = 1.0 / Double(chartData.count)
+
+                                    // Calcular índice baseado em qual segmento o mouse está
+                                    var index = Int(relativeX / segmentWidth)
+
+                                    // Garantir que o índice está no range válido (0 até count-1)
+                                    // Se o cálculo resultar em count ou maior, usar a última barra
+                                    if index >= chartData.count {
+                                        index = chartData.count - 1
+                                    }
+
+                                    let nextDate = chartData[index].date
+                                    if selectedDate != nextDate {
+                                        selectedDate = nextDate
+                                    }
+                                }
+                            case .ended:
+                                isHovering = false
+                                mouseLocation = nil
+                                selectedDate = nil
                             }
-                        case .ended:
-                            isHovering = false
-                            mouseLocation = nil
-                            selectedDate = nil
                         }
                     }
 
-                    if let selectedPoint = selectedPoint, let mouseLocation = mouseLocation, isHovering {
+                    if isActive, let selectedPoint = selectedPoint, let mouseLocation = mouseLocation, isHovering {
                         let tooltipWidth: CGFloat = 120
                         let tooltipHeight: CGFloat = 80
                         let offsetX: CGFloat = 16
@@ -260,7 +284,7 @@ private struct TooltipView: View {
 #if DEBUG
 #Preview {
     let settings = PomodoroSettings()
-    StatisticsView()
+    StatisticsView(isActive: true)
         .environmentObject(StatisticsStore.shared)
         .environmentObject(PomodoroTimer(settings: settings))
         .environmentObject(settings)
