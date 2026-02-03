@@ -137,9 +137,14 @@ struct SessionHistoryView: View {
                                 .foregroundColor(phaseColors.secondary)
                             Spacer()
                         }
-                        .padding(.horizontal, 20)
+                        .padding(.horizontal, 16)
                         .padding(.vertical, 8)
-                        .background(phaseColors.background.opacity(0.45))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .background(
+                            RoundedRectangle(cornerRadius: 24, style: .continuous)
+                                .fill(phaseColors.background.opacity(0.45))
+                        )
+                        .padding(.horizontal, 20)
 
                         SwiftUI.ForEach(section.sessions) { session in
                             SessionRowView(session: session, phaseColors: phaseColors)
