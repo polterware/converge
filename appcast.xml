@@ -6,6 +6,13 @@
         <description>Converge - Pomodoro Timer for macOS</description>
         <language>en</language>
         <item>
+            <title>Version 0.0.2</title>
+            <pubDate>Tue, 03 Feb 2026 02:11:20 +0000</pubDate>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/polterware/converge/releases/download/v0.0.2/Converge-macos-universal-v0.0.2.zip" sparkle:version="26" sparkle:shortVersionString="0.0.2" sparkle:edSignature="YmUDunwB+/yrUjOKWVewG4gRk39r4xq/TukYYkprGcqVcn5gOnTaFXpRnwqnmUe4qu5jWlOIGmUTyhuYMdU7Dg==" sparkle:os="macos" length="1456387" type="application/zip" />
+            <description>Converge 0.0.2 release.</description>
+        </item>
+        <item>
             <title>Version 0.0.1</title>
             <pubDate>Sat, 31 Jan 2026 17:01:01 +0000</pubDate>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
