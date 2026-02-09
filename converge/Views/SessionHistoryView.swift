@@ -114,6 +114,11 @@ struct SessionHistoryView: View {
         let sections = groupSessionsByDay(sessions: filteredSessions)
 
         return VStack(spacing: 0) {
+            filterTimeline
+                .padding(.horizontal, 20)
+                .padding(.top, 16)
+                .padding(.bottom, 10)
+
             if sections.isEmpty {
                 emptyStateView
             } else {
@@ -125,10 +130,6 @@ struct SessionHistoryView: View {
     private func sessionList(sections: [DaySection]) -> some View {
         ScrollView {
             LazyVStack(spacing: 0, pinnedViews: []) {
-                filterTimeline
-                    .padding(.horizontal, 20)
-                    .padding(.bottom, 10)
-
                 SwiftUI.ForEach(sections, id: \.date) { section in
                     VStack(spacing: 0) {
                         HStack {
