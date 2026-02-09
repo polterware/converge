@@ -21,15 +21,23 @@ struct WindowManagerSetupView: View {
     @EnvironmentObject private var themeSettings: ThemeSettings
     @EnvironmentObject private var statisticsStore: StatisticsStore
     @Environment(\.colorScheme) private var systemColorScheme
+    @StateObject private var windowObserver = WindowObserver()
     @AppStorage("hasSeenWelcomeModal") private var hasSeenWelcomeModal = false
     @State private var showWelcomeModal = false
     @State private var selectedTab: MainTab = .pomodoro
 
     var body: some View {
         ZStack {
-            GlassBackground(tint: phaseColors.background)
+            GlassBackground(
+                tint: phaseColors.background,
+                tintOpacity: 0.85,
+                isFullScreen: windowObserver.isFullScreen
+            )
                 .animation(.easeInOut(duration: 0.5), value: pomodoroTimer.phase)
                 .animation(.easeInOut(duration: 0.5), value: pomodoroTimer.isRunning)
+                .animation(.easeInOut(duration: 0.3), value: windowObserver.isFullScreen)
+
+            ToolbarBackgroundHider(isFullScreen: windowObserver.isFullScreen)
 
             TabView(selection: $selectedTab) {
                 PomodoroView(isActive: selectedTab == .pomodoro)
@@ -49,6 +57,7 @@ struct WindowManagerSetupView: View {
                     .tag(MainTab.history)
             }
             .tabViewStyle(.automatic)
+            .toolbarBackground(.hidden, for: .windowToolbar)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     SettingsToolbarButton {

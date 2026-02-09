@@ -238,7 +238,7 @@ struct SessionRowView: View {
         .padding(12)
         .background(
             RoundedRectangle(cornerRadius: 24)
-                .fill(.ultraThinMaterial)
+                .fill(.regularMaterial)
         )
     }
 }

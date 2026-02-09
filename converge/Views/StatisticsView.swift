@@ -222,6 +222,12 @@ struct StatisticsView: View {
             }
             .frame(height: 200)
         }
+        .padding()
+        .frame(maxWidth: .infinity)
+        .background(
+            RoundedRectangle(cornerRadius: 24)
+                .fill(.regularMaterial)
+        )
     }
 }
 
@@ -243,7 +249,7 @@ private struct StatCounter: View {
         .frame(maxWidth: .infinity)
         .background(
             RoundedRectangle(cornerRadius: 24)
-                .fill(.ultraThinMaterial)
+                .fill(.regularMaterial)
         )
     }
 }
@@ -275,7 +281,7 @@ private struct TooltipView: View {
         .padding(8)
         .background(
             RoundedRectangle(cornerRadius: 8)
-                .fill(.ultraThinMaterial)
+                .fill(.regularMaterial)
                 .shadow(color: .black.opacity(0.2), radius: 8, x: 0, y: 4)
         )
     }
